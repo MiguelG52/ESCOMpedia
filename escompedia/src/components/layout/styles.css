@@ -1,0 +1,18 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+.header p{
+    color: rgb(28, 28, 153);
+}
+.header-logo, .header-login{
+    padding: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    align-items: center;
+}
+.header-nav a{
+    padding: 1rem;
+}
+
