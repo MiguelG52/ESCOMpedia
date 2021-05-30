@@ -1,6 +1,8 @@
 import index from './Inicio'
+import CreateAccount from './login/CreateAccount'
 
 const views = {
-    viewIndex: index
+    viewIndex: index,
+    SignIn: CreateAccount
 }
 export default views

@@ -5,5 +5,7 @@ const Routes = {
     routeBibliotecas: '/bibliotecas',
     routeForo: '/foro',
     routePerfil: '/perfil',
+    routeSignIn: '/registrarse',
+    routeLoginIn: '/iniciaSesion'
 }
 export default Routes

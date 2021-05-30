@@ -8,8 +8,8 @@ import Views from './views'
 
 function App() {
   /* Extraemos layout y views desde objeto Routes y Views*/
-  const {routeIndex, routeBibliotecas, routeForo, routePerfil} = Routes
-  const {viewIndex} = Views
+  const {routeIndex, routeBibliotecas, routeForo, routePerfil, routeSignIn} = Routes
+  const {viewIndex, SignIn} = Views
   return (
     <Router>
       <Header/>
@@ -18,6 +18,7 @@ function App() {
         <Route exact path={routeBibliotecas}/>
         <Route exact path={routeForo}/>
         <Route exact path={routePerfil}/>
+        <Route exact path={routeSignIn} component={SignIn}/>
       </Switch>
     </Router>
   );
