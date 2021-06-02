@@ -1,7 +1,9 @@
-import React, {useState} from 'react'
-import { Input} from '../../components/Input'
-import validarCrearCuenta from '../../const/validaciones/sign'
-import useValidacion from '../../hooks/useValidacion'
+import React, { useState } from 'react';
+import { Input} from '../../components/Input';
+import { useHistory } from "react-router-dom";
+import validarCrearCuenta from '../../const/validaciones/sign';
+import useValidacion from '../../hooks/useValidacion';
+import firebase from '../../firebase/Config';
 
 
 const STATE_INICIAL = {
@@ -10,15 +12,22 @@ const STATE_INICIAL = {
     pass: "",
     escuela: ""
 }
-
 const CreateAccount = () => {
-
-    function crearCuenta(){
-        console.log("Creando Cuenta....")
-    }
+    const historial = useHistory();
+    const [error, setError] = useState(false);
     const {Valores, Errores, handleChange, handleSubmit, handleBlur} = useValidacion(STATE_INICIAL, validarCrearCuenta, crearCuenta);
     
-    const {nombre, email, escuela, pass} = Valores
+    const {nombre, email, escuela, pass} = Valores;
+
+    async function crearCuenta(){
+        try{
+            await firebase.registrar(nombre, email, escuela, pass);
+            historial.push('./')
+        }catch(error){
+            console.error('Hubo un error al crear el usuario', error.message);
+            setError(error.message)
+        }
+    }
 
     return (
         <div>
@@ -70,6 +79,7 @@ const CreateAccount = () => {
                     
                 />
                 {Errores.pass && <p>{Errores.pass}</p> }
+                {error && <p>{Error}</p>}
                 <button>Crear Cuenta</button>
             </form>
         </div>
