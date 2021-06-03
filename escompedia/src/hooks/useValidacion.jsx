@@ -17,7 +17,7 @@ const useValidacion = (estadoInicial, validar, fn) => {
             }
             setSubmitForm(false);
         }
-    }, [Errores]);
+    }, [Errores, SubmitForm, fn]);
 
     const handleChange = (e) => setValores({...Valores, [e.target.name] : e.target.value})
 

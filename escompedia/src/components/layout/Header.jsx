@@ -1,12 +1,13 @@
-import React, {Fragment, useState} from 'react'
-import Nav from './Nav'
-import Search from './Search'
-import {Link} from 'react-router-dom'
-import './styles.css'
+import React, {Fragment, useContext} from 'react';
+import Nav from './Nav';
+import Search from './Search';
+import {Link} from 'react-router-dom';
+import './styles.css';
+import {authContext} from '../../context/authContext';
 
 const Header = () => {
-    const [Usuario, setUsuario] = useState(false)
 
+    const {usuario, firebase} = useContext(authContext);
     return (
         <header>
             <div className ="header">
@@ -16,14 +17,14 @@ const Header = () => {
                     <Nav/>
                 </div>
                 <div className="header-login">
-                    {Usuario ? (
+                    {usuario ? (
                         <Fragment>
-                            <p>Hola: Miguel</p>
-                            <button type="button">Cerrar sesión</button>
+                            <p>Hola: {usuario.displayName }</p>
+                            <button type="button" onClick={() => firebase.logout()}>Cerrar sesión</button>
                         </Fragment>
                     ):(
                         <Fragment>
-                            <Link to = '/'>Iniciar Sesión</Link>
+                            <Link to = '/iniciaSesion'>Iniciar Sesión</Link>
                         <Link to = '/registrarse'>Crear Cuenta</Link>
                         </Fragment>
                     )}

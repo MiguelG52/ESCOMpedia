@@ -16,13 +16,12 @@ const CreateAccount = () => {
     const historial = useHistory();
     const [error, setError] = useState(false);
     const {Valores, Errores, handleChange, handleSubmit, handleBlur} = useValidacion(STATE_INICIAL, validarCrearCuenta, crearCuenta);
-    
     const {nombre, email, escuela, pass} = Valores;
 
     async function crearCuenta(){
         try{
-            await firebase.registrar(nombre, email, escuela, pass);
-            historial.push('./')
+            await firebase.registrar(nombre, email, pass);
+            historial.push('/');
         }catch(error){
             console.error('Hubo un error al crear el usuario', error.message);
             setError(error.message)
@@ -54,8 +53,8 @@ const CreateAccount = () => {
                     name="email"
                     placeholder="nombre@email.com"
                     onChange={handleChange}
-                    value={email}
-                    
+                    onBlur={handleBlur}
+                    value={email}     
                 />
                 {Errores.email && <p>{Errores.email}</p> }
                 <Input
@@ -65,8 +64,8 @@ const CreateAccount = () => {
                     name="escuela"
                     placeholder="ESCOM"
                     onChange={handleChange}
+                    onBlur={handleBlur}
                     value={escuela}
-                   
                 />
                 {Errores.escuela && <p>{Errores.escuela}</p> }
                 <Input
@@ -75,11 +74,11 @@ const CreateAccount = () => {
                     id="pass"
                     name="pass"
                     onChange={handleChange}
+                    onBlur={handleBlur}
                     value={pass}
-                    
                 />
                 {Errores.pass && <p>{Errores.pass}</p> }
-                {error && <p>{Error}</p>}
+                {error && <p>{error}</p>}
                 <button>Crear Cuenta</button>
             </form>
         </div>

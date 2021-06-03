@@ -19,12 +19,21 @@ class Firebase{
         this.auth = firebase.auth();
         this.db = firebase.firestore();
     }
-    async registrar(nombre, email, escuela, pass){
+    async registrar(nombre, email, pass){
+        
+        //Registra usuario
         const nuevoUsuario = await this.auth.createUserWithEmailAndPassword(email, pass);
-
         return await nuevoUsuario.user.updateProfile({
             displayName: nombre
-        })
+        });
+    }
+    //Inicia sesion con usuario
+    async login(email, pass){
+        return this.auth.signInWithEmailAndPassword(email, pass);
+    }
+    //Cierra sesion
+    async logout(){
+        await this.auth.signOut();
     }
 }
 

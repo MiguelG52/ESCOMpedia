@@ -1,8 +1,5 @@
-import index from './Inicio'
-import CreateAccount from './login/CreateAccount'
+import index from './Inicio';
+import CreateAccount from './CrearCuenta/CreateAccount';
+import Login from './Login/Login';
 
-const views = {
-    viewIndex: index,
-    SignIn: CreateAccount
-}
-export default views
+export { index, CreateAccount, Login }
