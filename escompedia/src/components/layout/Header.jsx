@@ -25,7 +25,7 @@ const Header = () => {
                     ):(
                         <Fragment>
                             <Link to = '/iniciaSesion'>Iniciar Sesión</Link>
-                        <Link to = '/registrarse'>Crear Cuenta</Link>
+                         <Link to = '/registrarse'>Crear Cuenta</Link>
                         </Fragment>
                     )}
                 </div>

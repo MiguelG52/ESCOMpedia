@@ -6,6 +6,11 @@ const Routes = {
     routeForo: '/foro',
     routePerfil: '/perfil',
     routeSignIn: '/registrarse',
-    routeLoginIn: '/iniciaSesion'
+    routeLoginIn: '/iniciaSesion',
+    routeInfoUser: '/infoUsuario',
+    routeCatalogo: '/catalogo',
+    roueteCatalogoProfesores: '/profesores',
+    routeRegistrarLibro: '/registrarLibro',
+    routeLibro: '/libro/:bookId'
 }
 export default Routes
