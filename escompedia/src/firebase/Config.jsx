@@ -47,6 +47,18 @@ class Firebase{
         })
     }
 
+    //registrar reseña
+    async regReview(idBook, autor, text, calificacion){
+        const reviews = this.db.collection("Reviews");
+        await reviews.add({
+            idBook,
+            autor,
+            text,
+            calificacion,
+            createdAt: firebase.firestore.FieldValue.serverTimestamp()
+        })
+    }
+
     //Obetener la referencia de alguna coleccion
     getCollection(collection){
         const ref = this.db.collection(collection);
