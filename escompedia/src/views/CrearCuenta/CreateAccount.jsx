@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext} from 'react';
 import { Input} from '../../components/Input';
 import { useHistory } from "react-router-dom";
 import validarCrearCuenta from '../../const/validaciones/sign';
 import useValidacion from '../../hooks/useValidacion';
-import firebase from '../../firebase/Config';
+import {authContext} from '../../context/authContext';
+import routes from '../../routes'
 
 
 const STATE_INICIAL = {
@@ -13,6 +14,7 @@ const STATE_INICIAL = {
     escuela: ""
 }
 const CreateAccount = () => {
+    const {firebase} = useContext(authContext);
     const historial = useHistory();
     const [error, setError] = useState(false);
     const {Valores, Errores, handleChange, handleSubmit, handleBlur} = useValidacion(STATE_INICIAL, validarCrearCuenta, crearCuenta);
@@ -21,7 +23,8 @@ const CreateAccount = () => {
     async function crearCuenta(){
         try{
             await firebase.registrar(nombre, email, pass);
-            historial.push('/');
+            await firebase.logout();
+            historial.push(routes.routeLoginIn);
         }catch(error){
             console.error('Hubo un error al crear el usuario', error.message);
             setError(error.message)
