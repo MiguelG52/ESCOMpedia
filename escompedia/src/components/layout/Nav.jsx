@@ -4,13 +4,14 @@ import Routes from '../../routes'
 import './styles.css'
 
 const Nav = () => {
-    const {routeIndex, routeBibliotecas, routeForo, routePerfil} = Routes
+    const {routeIndex, routeBibliotecas, routeForo, routePerfil, routeCatalogo} = Routes
     return (
         <nav className="header-nav">
             <Link to={routeIndex}>Inicio</Link>
             <Link to={routeBibliotecas}>Bibliotecas</Link>
             <Link to={routeForo}>Foro</Link>
             <Link to ={routePerfil}>Perfil</Link>
+            <Link to ={routeCatalogo}>Catalogo</Link>
         </nav>
     )
 }

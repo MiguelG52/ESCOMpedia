@@ -1,0 +1,19 @@
+.navCatalogo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+/*Clase del contenedor de todos los libros*/
+.libros{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+/*Clase por cada libro*/
+.libro{
+    border: solid black;
+}
