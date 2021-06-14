@@ -4,6 +4,8 @@ import Search from './Search';
 import {Link} from 'react-router-dom';
 import './styles.css';
 import {authContext} from '../../context/authContext';
+import 'materialize-css/dist/css/materialize.min.css'
+//import logo from ".\escompedia.png"
 
 const Header = () => {
 
@@ -12,7 +14,7 @@ const Header = () => {
         <header>
             <div className ="header">
                 <div className="header-logo">
-                    <p>Escompedia.jpg</p>
+                    <p>Esompedia.png</p>
                     <Search/>
                     <Nav/>
                 </div>
@@ -23,10 +25,18 @@ const Header = () => {
                             <button type="button" onClick={() => firebase.logout()}>Cerrar sesión</button>
                         </Fragment>
                     ):(
+						<nav className="nav-wrapper blue darken-1">
+						
+							
                         <Fragment>
+							
                             <Link to = '/iniciaSesion'>Iniciar Sesión</Link>
-                         <Link to = '/registrarse'>Crear Cuenta</Link>
+							
+                         <Link to = '/registrarse'> Crear Cuenta</Link>
+								
                         </Fragment>
+							
+							</nav>
                     )}
                 </div>
             </div>

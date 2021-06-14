@@ -5,6 +5,10 @@ import validarCrearCuenta from '../../const/validaciones/sign';
 import useValidacion from '../../hooks/useValidacion';
 import {authContext} from '../../context/authContext';
 import routes from '../../routes'
+import "./estiloCrearC.css";
+import 'materialize-css/dist/css/materialize.min.css'
+//import './App.css'
+//import Footer from './components/Footer'
 
 
 const STATE_INICIAL = {
@@ -33,11 +37,24 @@ const CreateAccount = () => {
 
     return (
         <div>
-            <h1>Crear Cuenta</h1>
+
+<div className="card-panel indigo darken-4">
+	<div className="white-text">
+
+		<h3 className="center-align">Crear Cuenta</h3>
+
+		</div>
+	</div>
+			
+			<blockquote><h6>¿Aún no estás registrado? Crea una cuenta ahora para ingresar al sistema y disfrutar de las funcionalidades que ofrece.  </h6></blockquote>
+				
             <form
                 onSubmit={handleSubmit}
                 noValidate
             >
+				
+				<div class="row">
+				 <div class="input-field col s6">
                 <Input
                     label="Nombre de usuario"
                     type="text"
@@ -48,7 +65,13 @@ const CreateAccount = () => {
                     value={nombre}
                     onBlur={handleBlur}
                 />
+					 </div>
+					
+				
+					
                 {Errores.nombre && <p>{Errores.nombre}</p> }
+				
+				<div class="input-field col s6">
                 <Input
                     label="Correo"
                     type="email"
@@ -59,7 +82,13 @@ const CreateAccount = () => {
                     onBlur={handleBlur}
                     value={email}     
                 />
+					
+					</div>
+					
+				
                 {Errores.email && <p>{Errores.email}</p> }
+					
+					<div class="input-field col s6">
                 <Input
                     label="Escuela"
                     type="text"
@@ -70,21 +99,40 @@ const CreateAccount = () => {
                     onBlur={handleBlur}
                     value={escuela}
                 />
+						
+					</div>
                 {Errores.escuela && <p>{Errores.escuela}</p> }
-                <Input
+                
+					<div class="input-field col s6">
+				
+                <i class="fas fa-user prefix"></i>
+						
+					<Input 
                     label="Contraseña"
                     type="password"
                     id="pass"
                     name="pass"
+					class="validate"
+					placeholder="Password"
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={pass}
                 />
+							 
+					
+						</div>
+					</div>
                 {Errores.pass && <p>{Errores.pass}</p> }
                 {error && <p>{error}</p>}
-                <button>Crear Cuenta</button>
+				
+				<div class="center-align">
+                <button class="btn waves-effect waves-light">Crear Cuenta</button>
+				</div>
             </form>
         </div>
+
+		
+
     )
 }
 
