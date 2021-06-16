@@ -9,30 +9,32 @@ const Nav = () => {
     return (
 		  
 		
-		<div className="row">
-        <nav className="nav-wrapper blue darken-1">
 
-			 
-			<div className="col s6">
+        	<nav className="nav-wrapper blue darken-1"> 
+			<div className="col l2">
 				<Link to={routeIndex}>Inicio</Link>
-				</div>
-				 <div className="col s6">
-           <Link   to={routeBibliotecas}>Bibliotecas</Link>
-				 </div>
-			<div className="col s6">
-           <Link  to={routeForo}>Foro</Link>
 			</div>
-			<div className="col s6">
-            <Link  to ={routePerfil}>Perfil</Link>
+			<div className="col l3">
+           		<Link to={routeBibliotecas}>Bibliotecas</Link>
 			</div>
-			<div className="col s6">
-             <Link  to ={routeCatalogo}>Catálogo</Link>
+			<div className="col l2">
+           		<Link to={routeForo}>Foro</Link>
 			</div>
+			<div className="col l2">
+            	<Link  to ={routePerfil}>Perfil</Link>
+			</div>
+			<div className="col l3">
+             	<Link  to ={routeCatalogo}>Catálogo</Link>
+			</div>
+			</nav>
 
-        </nav>
-			</div>
+
+
+
+
 			
     )
 }
 
 export default Nav
+			

@@ -33,8 +33,20 @@ const Review = ({bookId})=>{
     return(
         <section>
             <form onSubmit={handleSubmit}>
+				
+						<div className="center-align">
+						 <label className="black-text"><h5>Reseña</h5></label>
                 <Input type="text" id="review" name="review" placeholder="review" onChange={handleChange} onBlur={handleBlur} value={review}/>
-                {Errores.review && <p>{Errores.review}</p> }
+				</div>
+				
+                {Errores.review && 
+					<div className="center">
+							
+					<p className="card-panel pink accent-4">{Errores.review}</p>
+							
+						</div>
+				}
+				
                 <select name="calificacion" id="calificacion" value={calificacion} onChange={handleChange} onBlur={handleBlur} >
                     <option value="5">⭐⭐⭐⭐⭐</option>
                     <option value="4">⭐⭐⭐⭐</option>
@@ -42,18 +54,41 @@ const Review = ({bookId})=>{
                     <option value="2">⭐⭐</option>
                     <option value="1">⭐</option>
                  </select>
-                <Input type="submit" id="enviar" name="enviar" value="Escribir reseña"/>   
+				<div className="center">
+                <button className="btn waves-effect waves-light" type="submit" id="enviar" name="enviar">Escribir Reseña </button> 
+				</div>
             </form>
 
             <div>
-                <h1>Reseñas</h1>
-                {loading?<h2>Loading reviews...</h2>:
+                <div className="row container">
+                    <div className="col l12 m8 s12">
+                        <h2 className="center white-text"> <i> Reseñas del titulo </i></h2>
+                    </div>
+            </div>
+                {loading?<div className="row container">
+          <div className="col l12 m12 s12 center"> 
+              <div className="preloader-wrapper big active">
+              <div className="spinner-layer spinner-blue-only">
+              <div className="circle-clipper left">
+              <div className="circle"></div>
+              </div>
+              <div className="gap-patch">
+              <div className="circle"></div>
+             </div><div className="circle-clipper right">
+            <div className="circle"></div>
+            </div>
+          </div>
+        </div>
+          </div>
+        </div>:
                 (
                     reviews.map(({autor, text, createdAt, id, calificacion})=>(
-                        <div key={id}>
-                            {<p>{createdAt?.toDate()?.toString()}</p>}
-                            <p>{autor}: {text}</p>
-                            <p>{"⭐".repeat(calificacion)}</p>
+                        <div className="card" key={id}>
+                            <div className="card-content">
+                            {<p> <b>Hora y Fecha: </b> <i> {createdAt?.toDate()?.toString()} </i> </p>}
+                            <p> <b>Autor: </b> <i> {autor}: {text} </i> </p>
+                            <p> <b>Calificacion: </b> <i>{"⭐".repeat(calificacion)} </i> </p>
+                        </div>
                         </div>
                     ))
                 )}

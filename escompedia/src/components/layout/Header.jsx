@@ -5,19 +5,29 @@ import {Link} from 'react-router-dom';
 import './styles.css';
 import {authContext} from '../../context/authContext';
 import 'materialize-css/dist/css/materialize.min.css'
+import './Headercss.css'
 //import logo from ".\escompedia.png"
 
 const Header = () => {
 
     const {usuario, firebase} = useContext(authContext);
     return (
-        <header>
-            <div className ="header">
+        <header className="row flexx">
+            <div className ="col l1.5">
                 <div className="header-logo">
-                    <p>Esompedia.png</p>
-                    <Search/>
-                    <Nav/>
+                    <p> <img src="Escompedia.png" alt="logotipo"/></p>
                 </div>
+            </div>  
+
+            <div className ="col l4">
+                 <Search/>
+            </div>
+
+            <div className ="col l5.5">
+                    <Nav/>
+            </div>
+            
+            <div className ="col l3 center">           
                 <div className="header-login">
                     {usuario ? (
                         <Fragment>
@@ -26,11 +36,9 @@ const Header = () => {
                         </Fragment>
                     ):(
 						<nav className="nav-wrapper blue darken-1">
-						
-							
                         <Fragment>
 							
-                            <Link to = '/iniciaSesion'>Iniciar Sesión</Link>
+                        <Link to = '/iniciaSesion'>Iniciar Sesión</Link>
 							
                          <Link to = '/registrarse'> Crear Cuenta</Link>
 								
@@ -40,7 +48,9 @@ const Header = () => {
                     )}
                 </div>
             </div>
-        </header>
+        </header>           
+
+
     )
 }
 

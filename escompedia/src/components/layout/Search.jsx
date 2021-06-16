@@ -2,30 +2,22 @@ import React from 'react'
 import './styles.css'
 import 'materialize-css/dist/css/materialize.min.css'
 
-const Buscar = () => {
+const Search = () => {
     return (
 		
+
+        	<nav className="nav-wrapper blue darken-1"> 
+      		<form>
+        		<div class="input-field">
+          			<input id="search" type="search" required placeholder="¿Buscas algun libro?"/>
+          			<label class="label-icon" for="search"><i class="material-icons">search</i></label>
+          			<i class="material-icons">close</i>
+        		</div>
+      		</form>
+			</nav>
 		
-			
-			<nav className="nav-wrapper blue darken-1">
-			<div className="container"> 
-			
-        <form>
-			
-            <input type="text" placeholder="¿buscas algun libro?"/>
-			<div class="button-search">
-				<div class="center-align">
-            <button className="btn waves-effect waves-light">Buscar</button>
-				</div>
-				</div>
 				
-        </form>
-			</div>
-				</nav>
-			
-			
-			
     )
 }
 
-export default Buscar
+export default Search

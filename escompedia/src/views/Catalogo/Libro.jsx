@@ -12,22 +12,52 @@ const Libro = ()=>{
     console.log(libro);
 
     if(loading){
-        return <div>Loading...</div>
+        return <div className="row container">
+        <div className="col l12 m12 s12 center"> 
+            <div className="preloader-wrapper big active">
+            <div className="spinner-layer spinner-blue-only">
+            <div className="circle-clipper left">
+            <div className="circle"></div>
+            </div>
+            <div className="gap-patch">
+            <div className="circle"></div>
+           </div><div className="circle-clipper right">
+          <div className="circle"></div>
+          </div>
+        </div>
+      </div>
+        </div>
+      </div>
     }
     return(
         <>
         <main>
+        <div className="row container">
+            <div className="col l12 m8 s12">
+                <h2 className="center white-text"> <i> Informacion del titulo </i></h2>
+            </div>
+        </div>
+
             {libro && (
-                <div>
-                <h1>Titulo: {libro.titulo}</h1>
-                <p>Autor: {libro.autor}</p>
-                <p>Año: {libro.year}</p>
-                <p>Editorial: {libro.editorial}</p>
+                <div className="row container">
+                    <div className="col l8 m8 s12">
+                        <div className="card">
+                        <div className="card-content">
+                            <span className="card-title">Titulo: {libro.titulo}</span>
+                            <h6>Autor: {libro.autor}</h6>
+                            <h6>Año: {libro.year}</h6>
+                            <h6>Editorial: {libro.editorial}</h6>
+                        </div>
+                        </div>
+                    </div>
                 </div>
+                
                 )
             }
         </main>
+        <div className="container">
         <Review bookId={bookId}/>
+        </div>
         </>
     )
 }
