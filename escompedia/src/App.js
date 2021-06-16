@@ -3,7 +3,7 @@ import React from "react";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Header from './components/layout/Header';
 import Routes from './routes'
-import{CreateAccount, Foro} from './views'
+import{CreateAccount, Foro, Login} from './views'
 import { FirebaseProvider } from './context/authContext';
 import { useAutenticacion } from './hooks';
 import Catalogo from './views/Catalogo/Catalogo';
@@ -34,7 +34,7 @@ function App() {
             <Route exact path={roueteCatalogoProfesores} render={()=><Catalogo tipo="profesor"/>}/>
             <Route exact path={routeRegistrarLibro} component={RegistrarLibro}/>
             <Route exact path={routeLibro} component={Libro}/>
-            <Route />
+            <Route exact path={routeLoginIn} component={Login}/>
           </Switch>
         </Router>
       </FirebaseProvider>
