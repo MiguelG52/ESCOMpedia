@@ -12,7 +12,7 @@ const Catalogo = ({tipo})=>{
     const {firebase} = useContext(authContext);
     const librosRef = firebase.getCollection("Libros");
     const librosQuery = librosRef.where("tipo", "==", tipo);
-    const [libros, loading, error] = useCollectionData(librosQuery, {idField: "id"});
+    const [libros, loading] = useCollectionData(librosQuery, {idField: "id"});
 
     if(loading){    
         return <div className="row container">
@@ -38,8 +38,6 @@ const Catalogo = ({tipo})=>{
     <>
     <NavCatalogo/>
 
-<body>
-
     <div className="row container">
         <div className="col l12 m8 s12">
           <h2 className="PonerCapital center white-text"> <i> {tipo} </i></h2>
@@ -48,11 +46,11 @@ const Catalogo = ({tipo})=>{
        
     <div className="row container">
             {libros &&
-               libros.map (({autor, titulo, id}) => (
-                <div className="row col l4 m6 s12"> 
-                 <div className="card" key={id}>
+               libros.map (({autor, titulo, id, url}) => (
+                <div className="row col l4 m6 s12" key={id}> 
+                 <div className="card">
                      <div className="card-image">
-                     <img src="" alt="imagen de muestra"/>
+                     <img src={url} alt="imagen de muestra"/>
                      </div>
                     <div className="card-content">
                         <span className="card-title blue-text Titulo">{titulo}</span>                                   
@@ -65,24 +63,19 @@ const Catalogo = ({tipo})=>{
             }      
     </div>
 
-      
-
-  
-</body>
-
 <footer className="page-footer blue accent-4">
-          <div class="container">
-            <div class="row">
-              <div class="col l12 s12">
-                <h5 class="white-text">Contacto</h5>
-                <p class="grey-text text-lighten-4">Cualquier duda o comentario puede enviarla al correo escompedia@gmail.com</p>
+          <div className="container">
+            <div className="row">
+              <div className="col l12 s12">
+                <h5 className="white-text">Contacto</h5>
+                <p className="grey-text text-lighten-4">Cualquier duda o comentario puede enviarla al correo escompedia@gmail.com</p>
               </div>
             </div>
           </div>
-          <div class="footer-copyright">
-            <div class="container">
+          <div className="footer-copyright">
+            <div className="container">
                 © 2021 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="https://www.escom.ipn.mx/">ESCOM</a>
+            <a className="grey-text text-lighten-4 right" href="https://www.escom.ipn.mx/">ESCOM</a>
             </div>
           </div>
 </footer>

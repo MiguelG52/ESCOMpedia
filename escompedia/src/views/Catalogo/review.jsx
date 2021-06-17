@@ -20,7 +20,7 @@ const Review = ({bookId})=>{
     const {firebase, usuario} = useContext(authContext);
     const reviewsRef = firebase.getCollection("Reviews");
     const reviewsQuery = reviewsRef.where("idBook", "==", bookId);
-    const [reviews, loading, error] = useCollectionData(reviewsQuery, {idField: "id"});
+    const [reviews, loading] = useCollectionData(reviewsQuery, {idField: "id"});
     console.log(reviews)
 
     const {Valores, Errores, handleChange, handleSubmit, handleBlur} = useValidacion(STATE_INICIAL,validarCampos, enviarReview);

@@ -53,8 +53,8 @@ const CreateAccount = () => {
                 noValidate
             >
 				
-				<div class="row">
-				 <div class="input-field col s6">
+				<div className="row">
+				 <div className="input-field col s6">
                 <Input
                     label="Nombre de usuario"
                     type="text"
@@ -71,7 +71,7 @@ const CreateAccount = () => {
 					
                 {Errores.nombre && <p>{Errores.nombre}</p> }
 				
-				<div class="input-field col s6">
+				<div className="input-field col s6">
                 <Input
                     label="Correo"
                     type="email"
@@ -88,7 +88,7 @@ const CreateAccount = () => {
 				
                 {Errores.email && <p>{Errores.email}</p> }
 					
-					<div class="input-field col s6">
+					<div className="input-field col s6">
                 <Input
                     label="Escuela"
                     type="text"
@@ -105,7 +105,7 @@ const CreateAccount = () => {
                 
 					<div class="input-field col s6">
 				
-                <i class="fas fa-user prefix"></i>
+                <i className="fas fa-user prefix"></i>
 						
 					<Input 
                     label="Contraseña"
@@ -125,8 +125,8 @@ const CreateAccount = () => {
                 {Errores.pass && <p>{Errores.pass}</p> }
                 {error && <p>{error}</p>}
 				
-				<div class="center-align">
-                <button class="btn waves-effect waves-light">Crear Cuenta</button>
+				<div className="center-align">
+                <button className="btn waves-effect waves-light">Crear Cuenta</button>
 				</div>
             </form>
         </div>

@@ -17,6 +17,7 @@ class Firebase{
         firebase.initializeApp(Config);
         this.auth = firebase.auth();
         this.db = firebase.firestore();
+        this.storage = firebase.storage();
     }
     async registrar(nombre, email, pass){
         
@@ -35,7 +36,7 @@ class Firebase{
         await this.auth.signOut();
     }
     //registrar libro
-    regLibro(titulo, autor, editorial, year, tema, tipo){
+    regLibro(titulo, autor, editorial, year, tema, tipo, url){
         const libros = this.db.collection("Libros");
         libros.add({
             titulo,
@@ -43,7 +44,8 @@ class Firebase{
             editorial,
             year,
             tema, 
-            tipo
+            tipo,
+            url
         })
     }
 
@@ -69,6 +71,11 @@ class Firebase{
     getDocument(idCollection, idDocument){
         const docRef = this.db.collection(idCollection).doc(idDocument);
         return docRef;
+    }
+
+    //Subir imagen
+    getStorage(){
+        return this.storage;
     }
 }
 

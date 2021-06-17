@@ -1,9 +1,10 @@
-import React, { useContext} from 'react'
+import React, { useContext, useRef} from 'react'
 import { Input } from '../../components/Input';
 import { authContext } from '../../context/authContext';
 import { useValidacion } from '../../hooks';
 import NavCatalogo from './NavCatalogo';
 import "./RegistrarLibro.css";
+import { useHistory } from "react-router-dom";
 
 const STATE_INICIAL = {
     autor: "",
@@ -26,9 +27,26 @@ const RegistrarLibro = ()=> {
 
     const {Valores, Errores, handleChange, handleSubmit, handleBlur} = useValidacion(STATE_INICIAL,validarCampos, registrarLibro);
     const {autor, titulo, editorial, year, tema, tipo} = Valores;
+    const imageRef = useRef(null);
+    const historial = useHistory();
 
     function registrarLibro (){
-        firebase.regLibro(titulo, autor, editorial, year, tema, tipo);
+        const storage = firebase.getStorage();
+        const image = imageRef.current.files[0];
+        const uploadTask = storage.ref(`images/${image.name}`).put(image);
+        uploadTask.on(
+            "stated_changed",
+            snapshot =>{},
+            error =>{
+                console.log(error);
+            },
+            ()=>{
+                storage.ref("images").child(image.name).getDownloadURL().then(url=>{
+                    firebase.regLibro(titulo, autor, editorial, year, tema, tipo, url);
+                    historial.push("/catalogo")
+                });
+            }
+        )
     }
 
 
@@ -84,11 +102,17 @@ const RegistrarLibro = ()=> {
 					</div>
 					</div>
 				</div>
+
+        <div>
+          <input type="file" name="imagen" id="imagen" ref={imageRef} placeholder="imagen" />
+        </div>
+
 				
             <select name="tipo" id="tipo" value={tipo} onChange={handleChange} onBlur={handleBlur} >
                 <option value="general">General</option>
                 <option value="profesor">Profesor</option>
             </select>
+
 				</div>
             <div className="center">
             <button className="btn waves-effect waves-light" type="submit" id="Registrar" name="Registrar">Registrar</button>  
@@ -96,18 +120,18 @@ const RegistrarLibro = ()=> {
         </form> 
         </div>
 			<footer className="page-footer blue accent-4">
-          <div class="container">
-            <div class="row">
-              <div class="col l12 s12">
-                <h5 class="white-text">Contacto</h5>
-                <p class="grey-text text-lighten-4">Cualquier duda o comentario puedes enviarla al correo escompedia@gmail.com</p>
+          <div className="container">
+            <div className="row">
+              <div className="col l12 s12">
+                <h5 className="white-text">Contacto</h5>
+                <p className="grey-text text-lighten-4">Cualquier duda o comentario puedes enviarla al correo escompedia@gmail.com</p>
               </div>
             </div>
           </div>
-          <div class="footer-copyright">
-            <div class="container">
+          <div className="footer-copyright">
+            <div className="container">
                 © 2021 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="https://www.escom.ipn.mx/">ESCOM</a>
+            <a className="grey-text text-lighten-4 right" href="https://www.escom.ipn.mx/">ESCOM</a>
             </div>
           </div>
 </footer>

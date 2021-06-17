@@ -6,7 +6,7 @@ import './styles.css';
 import {authContext} from '../../context/authContext';
 import 'materialize-css/dist/css/materialize.min.css'
 import './Headercss.css'
-//import logo from ".\escompedia.png"
+import logo from "./escompedia.png"
 
 const Header = () => {
 
@@ -15,7 +15,7 @@ const Header = () => {
         <header className="row flexx">
             <div className ="col l1.5">
                 <div className="header-logo">
-                    <p> <img src="Escompedia.png" alt="logotipo"/></p>
+                    <p> <img src={logo} alt="logotipo"/></p>
                 </div>
             </div>  
 
