@@ -77,6 +77,20 @@ class Firebase{
     getStorage(){
         return this.storage;
     }
+     //Registra Entrada de Foro
+     async regDiscusion(nombreBaseDeDatos, titulo,descripcion, usuario, tipo){
+        const entrada = this.db.collection(nombreBaseDeDatos);
+        await entrada.add({
+            usuario,
+            tipo,
+            titulo,
+            descripcion, 
+            votos:0,
+            comentarios: [],
+            fecha: firebase.firestore.FieldValue.serverTimestamp(),
+            haVotado:[]
+        })
+    }
 }
 
 export default new Firebase();

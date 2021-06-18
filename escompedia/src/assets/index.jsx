@@ -8,6 +8,6 @@ import helpIcon from './img/help.svg';
 import movieIcon from './img/movie.svg';
 import musicIcon from './img/music.svg';
 import settingsIcon from './img/settings.svg';
-import arrowRightIcon from './img/right.svg'
-
-export {foroIcon, postIcon, usersIcon, bookIcon, chatIcon, gameIcon, helpIcon, movieIcon, musicIcon, settingsIcon, arrowRightIcon};
+import arrowRightIcon from './img/right.svg';
+import likeIcon  from './img/like.svg';
+export {foroIcon, postIcon, usersIcon, bookIcon, chatIcon, gameIcon, helpIcon, movieIcon, musicIcon, settingsIcon, arrowRightIcon, likeIcon};

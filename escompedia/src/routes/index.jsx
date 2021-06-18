@@ -11,6 +11,11 @@ const Routes = {
     routeCatalogo: '/catalogo',
     roueteCatalogoProfesores: '/profesores',
     routeRegistrarLibro: '/registrarLibro',
-    routeLibro: '/libro/:bookId'
+    routeLibro: '/libro/:bookId',
+    routeForoReglas: '/foro/reglas',
+    routeForoPost: '/foro/post/:id',
+    routeForoAyuda: '/foro/ayuda',
+    routeForoGeneral: '/foro/general',
+    routeForoLibros:'/foro/libros',
 }
 export default Routes

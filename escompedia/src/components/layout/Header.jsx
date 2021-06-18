@@ -6,7 +6,7 @@ import './styles.css';
 import {authContext} from '../../context/authContext';
 import 'materialize-css/dist/css/materialize.min.css'
 import './Headercss.css'
-import logo from "./escompedia.png"
+import logo from "./escompedia.PNG"
 
 const Header = () => {
 

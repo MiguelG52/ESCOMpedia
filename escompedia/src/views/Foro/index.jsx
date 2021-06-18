@@ -32,10 +32,10 @@ const Foro = () => {
                     <div className="bg-white rounded-2xl">
                         <p className="p-5 text-2xl font-semibold">Foros activos</p>
                         <div className="flex flex-col md:justify-around p-2 gap-5 md:h-80">
-                            <Foros icon={chatIcon} label="Reglas y normativa" cursor={arrowRightIcon} enlace="/foros/reglas"/>  
-                            <Foros icon={chatIcon} label="Foro General" cursor={arrowRightIcon} enlace="/foros/general"/>  
-                            <Foros icon={chatIcon} label="Foro de Libros" cursor={arrowRightIcon} enlace="/foros/libros"/>  
-                            <Foros icon={chatIcon} label="Ayuda y soporte" cursor={arrowRightIcon} enlace="/foros/ayuda"/> 
+                        <Foros icon={chatIcon} label="Reglas y normativa" cursor={arrowRightIcon} enlace="/foro/reglas"/>  
+                            <Foros icon={chatIcon} label="Foro General" cursor={arrowRightIcon} enlace="/foro/general"/>  
+                            <Foros icon={chatIcon} label="Foro de Libros" cursor={arrowRightIcon} enlace="/foro/libros"/>  
+                            <Foros icon={chatIcon} label="Ayuda y soporte" cursor={arrowRightIcon} enlace="/foro/ayuda"/> 
                         </div>
                     </div>
                 </section>

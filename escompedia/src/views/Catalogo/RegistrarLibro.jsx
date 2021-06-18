@@ -25,7 +25,7 @@ const validarCampos = (valores) =>{
 const RegistrarLibro = ()=> {
     const {firebase} = useContext(authContext);
 
-    const {Valores, Errores, handleChange, handleSubmit, handleBlur} = useValidacion(STATE_INICIAL,validarCampos, registrarLibro);
+    const {Valores, handleChange, handleSubmit, handleBlur} = useValidacion(STATE_INICIAL,validarCampos, registrarLibro);
     const {autor, titulo, editorial, year, tema, tipo} = Valores;
     const imageRef = useRef(null);
     const historial = useHistory();

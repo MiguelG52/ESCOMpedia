@@ -3,7 +3,7 @@ import React from "react";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Header from './components/layout/Header';
 import Routes from './routes'
-import{CreateAccount, Foro, Login} from './views'
+import{CreateAccount, Foro, Login, ForoReglas, ForoAyuda, ForoGeneral, ForoLibros, PostAbierto} from './views'
 import { FirebaseProvider } from './context/authContext';
 import { useAutenticacion } from './hooks';
 import Catalogo from './views/Catalogo/Catalogo';
@@ -19,7 +19,7 @@ function App() {
 
   /* Extraemos layout y views desde objeto Routes y Views*/
   const {routeIndex, routeBibliotecas, routeForo, routePerfil, routeSignIn, routeLoginIn, routeCatalogo,
-          roueteCatalogoProfesores, routeRegistrarLibro, routeLibro} = Routes
+          roueteCatalogoProfesores, routeRegistrarLibro, routeLibro, routeForoReglas, routeForoPost, routeForoAyuda,routeForoGeneral,routeForoLibros} = Routes
   return (
       <FirebaseProvider>
         <Router>
@@ -35,6 +35,11 @@ function App() {
             <Route exact path={routeRegistrarLibro} component={RegistrarLibro}/>
             <Route exact path={routeLibro} component={Libro}/>
             <Route exact path={routeLoginIn} component={Login}/>
+            <Route exact path={routeForoReglas} render={()=> <ForoReglas/>}/>
+            <Route exact path={routeForoAyuda} render={()=> <ForoAyuda/>}/>
+            <Route exact path={routeForoGeneral} render={()=> <ForoGeneral/>}/>
+            <Route exact path={routeForoLibros} render={()=> <ForoLibros/>}/> 
+            <Route exact path={routeForoPost} component={PostAbierto} />
           </Switch>
         </Router>
       </FirebaseProvider>

@@ -2,5 +2,10 @@ import index from './Inicio';
 import CreateAccount from './CrearCuenta/CreateAccount';
 import Login from './Login/Login';
 import Foro from './Foro';
-
-export { index, CreateAccount, Login, Foro }
+import ForoReglas from './Foro/Reglas/ForoReglas';
+import Post from './Foro/Post'
+import PostAbierto from './Foro/PostAbierto';
+import ForoLibros from './Foro/ForoLibros';
+import ForoGeneral from './Foro/General/ForoGeneral';
+import ForoAyuda from './Foro/Ayuda';
+export { index, CreateAccount, Login, Foro, ForoReglas, Post, PostAbierto, ForoAyuda, ForoGeneral, ForoLibros};
