@@ -3,7 +3,7 @@ import React from "react";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Header from './components/layout/Header';
 import Routes from './routes'
-import{CreateAccount, Foro, Login, ForoReglas, ForoAyuda, ForoGeneral, ForoLibros, PostAbierto} from './views'
+import{CreateAccount, Foro, Login, ForoReglas, ForoAyuda, ForoGeneral, ForoLibros, PostAbierto, Index} from './views'
 import { FirebaseProvider } from './context/authContext';
 import { useAutenticacion } from './hooks';
 import Catalogo from './views/Catalogo/Catalogo';
@@ -25,7 +25,7 @@ function App() {
         <Router>
           <Header/>
           <Switch>
-            <Route exact path={routeIndex} />
+            <Route exact path={routeIndex} component={Index}/>
             <Route exact path={routeBibliotecas}/>
             <Route exact path={routeForo} component={Foro}/>
             <Route exact path={routePerfil} component={InfoUsuario}/>
