@@ -38,7 +38,7 @@ const CreateAccount = () => {
     return (
         <div>
 
-<div className="card-panel indigo darken-4">
+<div className="card-panel black">
 	<div className="white-text">
 
 		<h3 className="center-align">Crear Cuenta</h3>
@@ -55,8 +55,10 @@ const CreateAccount = () => {
 				
 				<div className="row">
 				 <div className="input-field col s6">
+					 <div className="blue-text text-darken-2">
+						 <label className="black-text"><h5>Usuario</h5></label>
                 <Input
-                    label="Nombre de usuario"
+                    
                     type="text"
                     id="nombre"
                     name="nombre"
@@ -65,15 +67,24 @@ const CreateAccount = () => {
                     value={nombre}
                     onBlur={handleBlur}
                 />
+						 </div>
 					 </div>
 					
 				
 					
-                {Errores.nombre && <p>{Errores.nombre}</p> }
+                {Errores.nombre && 
+						<div className="row">
+							<div className="col s4">
+						<p className="card-panel pink accent-4">{Errores.nombre}</p>
+							</div>
+							</div>
+				}
 				
-				<div className="input-field col s6">
+				<div class="input-field col s6">
+					<div className="blue-text text-darken-2">
+						 <label className="black-text"><h5>Correo</h5></label>
                 <Input
-                    label="Correo"
+                    
                     type="email"
                     id="email"
                     name="email"
@@ -84,13 +95,22 @@ const CreateAccount = () => {
                 />
 					
 					</div>
+					</div>
 					
 				
-                {Errores.email && <p>{Errores.email}</p> }
+                {Errores.email && 
+						<div className="row">
+							<div className="col s4">
+								<p className="card-panel pink accent-4">{Errores.email}</p> 
+							</div>
+							</div>
+								}
 					
-					<div className="input-field col s6">
+					<div class="input-field col s6">
+						<div className="blue-text text-darken-2">
+						 <label className="black-text"><h5>Escuela</h5></label>
                 <Input
-                    label="Escuela"
+                    
                     type="text"
                     id="escuela"
                     name="escuela"
@@ -99,16 +119,25 @@ const CreateAccount = () => {
                     onBlur={handleBlur}
                     value={escuela}
                 />
-						
+						</div>	
 					</div>
-                {Errores.escuela && <p>{Errores.escuela}</p> }
+                {Errores.escuela && 
+						<div className="row">
+							<div className="col s4">
+								<p className="card-panel pink accent-4">{Errores.escuela}</p>
+							</div>
+							</div>
+								}
                 
 					<div class="input-field col s6">
+						
 				
-                <i className="fas fa-user prefix"></i>
+                <i class="fas fa-user prefix"></i>
+						<div className="blue-text text-darken-2">
+						 <label className="black-text"><h5>Contraseña</h5></label>
 						
 					<Input 
-                    label="Contraseña"
+                    
                     type="password"
                     id="pass"
                     name="pass"
@@ -118,17 +147,47 @@ const CreateAccount = () => {
                     onBlur={handleBlur}
                     value={pass}
                 />
-							 
+						</div> 
 					
 						</div>
 					</div>
-                {Errores.pass && <p>{Errores.pass}</p> }
-                {error && <p>{error}</p>}
+                {Errores.pass && 
+					<div className="row">
+							<div className="col s4">
+					<p className="card-panel pink accent-4">{Errores.pass}</p> 
+						</div>
+						</div>
+				
+				}
+                {error && 
+					<div className="row">
+							<div className="col s4">
+					<p className="card-panel pink accent-4">{error}</p>
+						</div>
+						</div>
+								}
 				
 				<div className="center-align">
                 <button className="btn waves-effect waves-light">Crear Cuenta</button>
 				</div>
             </form>
+			
+			<footer className="page-footer blue accent-4">
+          <div className="container">
+            <div className="row">
+              <div className="col l12 s12">
+                <h5 className="white-text">Contacto</h5>
+                <p className="grey-text text-lighten-4">Cualquier duda o comentario puedes enviarla al correo escompedia@gmail.com</p>
+              </div>
+            </div>
+          </div>
+          <div className="footer-copyright">
+            <div className="container">
+                © 2021 Copyright Text
+            <a className="grey-text text-lighten-4 right" href="https://www.escom.ipn.mx/">ESCOM</a>
+            </div>
+          </div>
+</footer>
         </div>
 
 		

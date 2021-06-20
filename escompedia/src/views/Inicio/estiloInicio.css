@@ -10,3 +10,8 @@ body {
     background-image: linear-gradient(to right, #00669977, #006699);
 
 }
+
+.sombra .card-panel{
+    border-radius: 12.5px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2) ;
+}

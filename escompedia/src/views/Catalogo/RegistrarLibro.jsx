@@ -103,7 +103,7 @@ const RegistrarLibro = ()=> {
 					</div>
 				</div>
 
-        <div>
+        <div className="center-align">
           <input type="file" name="imagen" id="imagen" ref={imageRef} placeholder="imagen" />
         </div>
 
