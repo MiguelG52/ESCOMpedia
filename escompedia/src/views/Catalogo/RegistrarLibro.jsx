@@ -1,10 +1,12 @@
-import React, { useContext, useRef} from 'react'
+import React, { useContext, useEffect, useRef} from 'react'
 import { Input } from '../../components/Input';
 import { authContext } from '../../context/authContext';
 import { useValidacion } from '../../hooks';
 import NavCatalogo from './NavCatalogo';
 import "./RegistrarLibro.css";
 import { useHistory } from "react-router-dom";
+import Footer from '../../components/layout/Footer';
+import M from "materialize-css"
 
 const STATE_INICIAL = {
     autor: "",
@@ -49,6 +51,10 @@ const RegistrarLibro = ()=> {
         )
     }
 
+    useEffect(() => {
+            var elems = document.querySelectorAll('select');
+            M.FormSelect.init(elems, "");
+    }, [])
 
     return (
         <>
@@ -56,85 +62,74 @@ const RegistrarLibro = ()=> {
 			
         <div className="container">
 		
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="formRegistrarLibro">
 			<div className="row">
-				<div className="input-field col s6">
-					<div className="blue-text text-darken-2">
-						<div className="center-align">
-						 <label className="black-text"><h5>Autor</h5></label>
-            <Input type="text" id="autor" name="autor" value={autor} onChange={handleChange} onBlur={handleBlur} placeholder="autor"/>
-					</div>
-						</div>
-					</div>
-				
-				<div className="input-field col s6">
-					<div className="blue-text text-darken-2">
-						<div className="center-align">
-						 <label className="black-text"><h5>Título</h5></label>
-            <Input type="text" id="titulo" name="titulo" value={titulo} onChange={handleChange} onBlur={handleBlur} placeholder="titulo"/>
-					</div>
-					</div>
-				</div>
-				
-				<div className="input-field col s6">
-					<div className="blue-text text-darken-2">
-						<div className="center-align">
-						 <label className="black-text"><h5>Editorial</h5></label>
-            <Input type="text" id="editorial" name="editorial" value={editorial} onChange={handleChange} onBlur={handleBlur} placeholder="editorial"/>
-					</div>
-					</div>
-				</div>
-				
-				<div className="input-field col s6">
-					<div className="blue-text text-darken-2">
-						<div className="center-align">
-						 <label className="black-text"><h5>Año</h5></label>
-            <Input type="number" id="year" name="year" value={year} onChange={handleChange} onBlur={handleBlur} placeholder="Año"/>
-					</div>
-					</div>
-				</div>
-				
-				<div className="input-field col s12">
-					<div className="blue-text text-darken-2">
-						<div className="center-align">
-						 <label className="black-text"><h5>Tema</h5></label>
-            <Input type="text" id="tema" name="tema" value={tema} onChange={handleChange} onBlur={handleBlur} placeholder="tema"/>
-					</div>
-					</div>
-				</div>
 
-        <div className="center-align">
-          <input type="file" name="imagen" id="imagen" ref={imageRef} placeholder="imagen" />
-        </div>
+                <div className="input-field col s6">
+                    <div className="blue-text text-darken-2">
+                        <div className="center-align">
+                            <input type="text" id="autor" name="autor" value={autor} onChange={handleChange} onBlur={handleBlur} placeholder="Autor"/>
+                        </div>
+                    </div>
+                </div>
 
-				
-            <select name="tipo" id="tipo" value={tipo} onChange={handleChange} onBlur={handleBlur} >
-                <option value="general">General</option>
-                <option value="profesor">Profesor</option>
-            </select>
+                <div className="input-field col s6">
+                    <div className="blue-text text-darken-2">
+                        <div className="center-align">
+                            <Input type="text" id="titulo" name="titulo" value={titulo} onChange={handleChange} onBlur={handleBlur} placeholder="Titulo" />
+                        </div>
+                    </div>
+                </div>
 
-				</div>
+                <div className="input-field col s6">
+                    <div className="blue-text text-darken-2">
+                        <div className="center-align">
+                            <Input type="text" id="editorial" name="editorial" value={editorial} onChange={handleChange} onBlur={handleBlur} placeholder="Editorial" />
+                        </div>
+                    </div>
+                </div>
+
+                <div className="input-field col s6">
+                    <div className="blue-text text-darken-2">
+                        <div className="center-align">
+                            <Input type="number" id="year" name="year" value={year} onChange={handleChange} onBlur={handleBlur} placeholder="Año" />
+                        </div>
+                    </div>
+                </div>
+
+                <div className="input-field col s6">
+                    <div className="blue-text text-darken-2">
+                        <div className="center-align">
+                            <Input type="text" id="tema" name="tema" value={tema} onChange={handleChange} onBlur={handleBlur} placeholder="Tema" />
+                        </div>
+                    </div>
+                </div>
+                <div className="input-field col s6">
+                    <select name="tipo" id="tipo" value={tipo} onChange={handleChange} onBlur={handleBlur} >
+                        <option value="general">General</option>
+                        <option value="profesor">Profesor</option>
+                    </select>
+                </div>
+                
+
+                <div className="file-field input-field col s12">
+                    <div className="btn">
+                        <span>Imagen de libro</span>
+                        <input type="file" name="imagen" id="imagen" ref={imageRef} placeholder="imagen" />
+                    </div>
+                    <div className="file-path-wrapper">
+                        <input className="file-path validate" type="text" />
+                    </div>
+                </div>
+
+            </div>
             <div className="center">
-            <button className="btn waves-effect waves-light" type="submit" id="Registrar" name="Registrar">Registrar</button>  
+                <button className="btn waves-effect waves-light" type="submit" id="Registrar" name="Registrar">Registrar</button>
             </div>
-        </form> 
-        </div>
-			<footer className="page-footer blue accent-4">
-          <div className="container">
-            <div className="row">
-              <div className="col l12 s12">
-                <h5 className="white-text">Contacto</h5>
-                <p className="grey-text text-lighten-4">Cualquier duda o comentario puedes enviarla al correo escompedia@gmail.com</p>
-              </div>
-            </div>
-          </div>
-          <div className="footer-copyright">
-            <div className="container">
-                © 2021 Copyright Text
-            <a className="grey-text text-lighten-4 right" href="https://www.escom.ipn.mx/">ESCOM</a>
-            </div>
-          </div>
-</footer>
+        </form>
+    </div>
+			
+            <Footer></Footer>
         </>
     );
 }

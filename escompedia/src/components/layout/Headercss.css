@@ -1,8 +1,12 @@
 .flexx{
     display:flex;
-    align-content: space-between;
+    align-items: center;
+
 }
 
 .header-logo img{
     max-height: 5rem;
+}
+header{
+    background-color:  #e5e7eb;
 }

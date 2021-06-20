@@ -35,13 +35,14 @@ const Header = () => {
                             <button type="button" onClick={() => firebase.logout()}>Cerrar sesión</button>
                         </Fragment>
                     ):(
-						<nav className="nav-wrapper blue darken-1">
+						<nav className="nav-wrapper blue darken-1 space">
                         <Fragment>
-							
-                        <Link to = '/iniciaSesion'>Iniciar Sesión</Link>
-							
-                         <Link to = '/registrarse'> Crear Cuenta</Link>
-								
+                            <div className="col s6">
+                            <Link to = '/iniciaSesion'>Iniciar Sesión</Link>
+                            </div>
+                            <div className="col s6">
+                            <Link to = '/registrarse'> Crear Cuenta</Link>
+                            </div>
                         </Fragment>
 							
 							</nav>

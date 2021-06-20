@@ -1,17 +1,8 @@
-.colorsubmit{
-    background-color: #2979ff;
-    color: white;
-}
-
-input[type=”file”]#imagen {
- width: 0.1px;
- height: 0.1px;
- opacity: 0;
- overflow: hidden;
- position: absolute;
- z-index: -1;
- }
-
+    .colorsubmit{
+        background-color: #2979ff;
+        color: white;
+    }
+/* 
 #imagen{
 font-size: 14px;
  font-weight: 1500;
@@ -24,4 +15,12 @@ font-size: 14px;
  text-transform: uppercase;
  width: fit-content;
  text-align: center;
+} */
+
+.formRegistrarLibro{
+    border-radius: 5px;
+    background-color: white;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 2rem;
 }

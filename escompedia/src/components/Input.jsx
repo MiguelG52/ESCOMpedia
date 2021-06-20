@@ -3,7 +3,7 @@ import React from 'react'
 export const Input = ({id, name, placeholder, type, label, onChange, value, handleBlur}) => {
     return (
         <div>
-            <label htmlFor={name}>{label}</label>
+            <label htmlFor={id}>{label}</label>
             <input
                 type={type}
                 id={id}

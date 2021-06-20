@@ -11,7 +11,8 @@
     align-content: center;
     padding: 1rem;
     gap: 1rem;
-    background-color: #2979ff ;
+    background-color: #3b82f6;
+    align-items: center;
 }
 
 /*Clase del contenedor de todos los libros*/
@@ -24,13 +25,12 @@
 
 .PonerCapital{
     text-transform: capitalize;
-    
 }
 
 body{
    font-family: 'Roboto', sans-serif;
-	
-    background-image: linear-gradient(80deg, #10e9ff 0, #3cb5f2 50%, #4084b0 100%);
+    /* background-image: linear-gradient(80deg, #10e9ff 0, #3cb5f2 50%, #4084b0 100%); */
+    background-color:  #e5e7eb;
 }
 
 .Titulo{
@@ -40,6 +40,10 @@ body{
 .card{
     padding: 0px;
     border-radius: 12.5px;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2) ;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.imageBook{
+    max-height: 40vh !important;
 }
 

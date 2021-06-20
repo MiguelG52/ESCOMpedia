@@ -3,8 +3,8 @@
 	flex-direction:row;
     justify-content: space-between;
 	display:flex;
-flex-direction:row;
-justify-content: space-between;
+    flex-direction:row;
+    align-items: center;
 }
 /*
 .header p{
@@ -12,13 +12,12 @@ justify-content: space-between;
 }
 */
 .header-logo{
-    
     display: flex;
-	flex-direction:row;
+    flex-direction:row;
     justify-content: space-between;
-		display:flex;
-flex-direction:row;
-justify-content: space-between;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
     gap: 2rem;
     align-items: right;
 }
@@ -33,6 +32,7 @@ justify-content: space-between;
 	display: flex;
 	flex-direction:row;
     justify-content: space-between;
+    align-items: center;
 }
 .header-nav{
 	padding: 15rem;

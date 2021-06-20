@@ -6,9 +6,8 @@
 
 body {
 	font-family: 'Roboto', sans-serif;
-	
-    background-image: linear-gradient(to right, #00669977, #006699);
-
+    /* background-image: linear-gradient(to right, #00669977, #006699); */
+    background-color:  #e5e7eb;
 }
 
 .sombra .card-panel{

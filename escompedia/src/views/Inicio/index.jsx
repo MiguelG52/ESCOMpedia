@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./estiloInicio.css";
 import 'materialize-css/dist/css/materialize.min.css'
 import sl1 from './Slide1.jpg';
@@ -6,9 +6,24 @@ import sl2 from './Slide2.jpg';
 import sl3 from './Slide3.jpg';
 import sl4 from './Slide4.jpg';
 import sl5 from './Slide5.jpg';
+import M from "materialize-css"
 
 
 const Index = () => {
+
+  useEffect(() => {
+    var elems = document.querySelectorAll('.slider');
+    var instances = M.Slider.init(elems, {
+      indicators: false,
+      interval: 3000,
+      height: 500
+    });
+    M.AutoInit();
+    var parallax = document.querySelectorAll('.parallax');
+    var instances = M.Parallax.init(parallax);
+
+  }, [])
+
     return (
     <>
      <div className="slider">
