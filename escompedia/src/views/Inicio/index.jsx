@@ -54,7 +54,7 @@ const Index = () => {
     <div className="black white-text center">
         <div className="container">
             <div className="section">
-            <h2 className="light grey-text text-lighten-3">Bienvenido a ESCOMpedia</h2>
+            <h2 className="light grey-text text-lighten-3">Bienvenido a ESCOMPEDIA</h2>
             <p className="light grey-text text-lighten-3"> Reseña, forma parte de un foro y consulta libros </p>
         </div>
     </div>
