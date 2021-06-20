@@ -1,4 +1,4 @@
-import Index from './Inicio/Index';
+import Index from './Inicio/index';
 import CreateAccount from './CrearCuenta/CreateAccount';
 import Login from './Login/Login';
 import Foro from './Foro';
