@@ -10,7 +10,7 @@ const Nav = () => {
 		  
 		
 
-        	<nav className="nav-wrapper blue darken-1"> 
+        	<nav className="nav-wrapper indigo darken-4"> 
 			<div className="col l2">
 				<Link to={routeIndex}>Inicio</Link>
 			</div>

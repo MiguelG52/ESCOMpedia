@@ -41,7 +41,7 @@ const Catalogo = ({tipo})=>{
 
     <div className="row container">
         <div className="col l12 m8 s12">
-          <h2 className="PonerCapital center blue-text"> <i> {tipo} </i></h2>
+          <h2 className="PonerCapital center black-text">{tipo}</h2>
         </div>
     </div>
        
@@ -54,11 +54,11 @@ const Catalogo = ({tipo})=>{
                      <img src={url} alt="imagen de muestra" className="imageBook"/>
                      </div>
                     <div className="card-content">
-                        <span className="card-title blue-text Titulo">{titulo}</span>                                   
+                        <span className="card-title indigo-text text-darken-4 center Titulo">{titulo}</span>                                   
                         <h6>Autor: {autor} </h6>
                     </div>
                     <div className="card-action">
-                    <Link className="blue-text" to={`/libro/${id}`}>Detalles</Link>
+                    <Link className="indigo-text text-darken-4" to={`/libro/${id}`}>Detalles</Link>
                     </div>
                 </div> </div>))
             }      

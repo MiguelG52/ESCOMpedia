@@ -7,6 +7,7 @@ import sl3 from './Slide3.jpg';
 import sl4 from './Slide4.jpg';
 import sl5 from './Slide5.jpg';
 import M from "materialize-css"
+import Footer from "../../components/layout/Footer";
 
 
 const Index = () => {
@@ -30,37 +31,37 @@ const Index = () => {
         <ul className="slides">
           <li>
             <img src={sl1} alt="slide1"/> 
-            <div className="caption center-align">
+            <div className="caption center-align stroke">
               <h1>LIBROS MAS CONSULTADOS</h1>
               <h4 className="light grey-text text-lighten-3">Aqui tienes lo mas visto hoy</h4>
             </div>
           </li>
           <li>
             <img src={sl3} alt="slide2"/> 
-            <div className="caption right-align">
+            <div className="caption right-align stroke">
               <h1>ECUACIONES DIFERENCIALES</h1>
-              <h5 className="light grey-text text-lighten-3"> Si tienes problemas en mate, checa nuestros libros de ecuaciones </h5>
+              <h4 className="light grey-text text-lighten-3"> Si tienes problemas en mate, checa nuestros libros de ecuaciones </h4>
             </div>
           </li>
           <li>
           <img src={sl4} alt="slide3"/> 
-            <div className="caption left-align">
+            <div className="caption left-align stroke">
               <h1>PROGRAMACION EN C</h1>
-              <h5 className="light grey-text text-lighten-3">Nada como un buen libro para aprender uno de los lenguajes mas usados del mundo</h5>
+              <h4 className="light grey-text text-lighten-3">Nada como un buen libro para aprender uno de los lenguajes mas usados del mundo</h4>
             </div>
           </li>
           <li>
           <img src={sl2} alt="slide4"/> 
-            <div className="caption right-align">
+            <div className="caption right-align stroke">
               <h1>SISTEMAS OPERATIVOS</h1>
-              <h5 className="light grey-text text-lighten-3">Aprende los origenes de las computadoras modernas</h5>
+              <h4 className="light grey-text text-lighten-3">Aprende los origenes de las computadoras modernas</h4>
             </div>
           </li>
           <li>
           <img src={sl5} alt="slide5" /> 
-            <div className="caption left-align">
+            <div className="caption left-align stroke">
               <h1>ADMINISTRACION FINANCIERA</h1>
-              <h5 className="light grey-text text-lighten-3">Conviertete en el mejor haciendo balanzas de comprobacion</h5>
+              <h4 className="light grey-text text-lighten-3">Conviertete en el mejor haciendo balanzas de comprobacion</h4>
             </div>
           </li>
         </ul>
@@ -98,23 +99,7 @@ const Index = () => {
     </div>
   </div >
 
-           
-			<footer className="page-footer blue accent-4">
-          <div className="container">
-            <div className="row">
-              <div className="col l12 s12">
-                <h5 className="white-text">Contacto</h5>
-                <p className="grey-text text-lighten-4">Cualquier duda o comentario puede enviarla al correo ejemplo@gmail.com</p>
-              </div>
-            </div>
-          </div>
-          <div className="footer-copyright">
-            <div className="container">
-                © 2021 Copyright Text
-            <a className="grey-text text-lighten-4 right" href="https://www.escom.ipn.mx/">ESCOM</a>
-            </div>
-          </div>
-      </footer>
+      <Footer></Footer>
     </>
     )
   }

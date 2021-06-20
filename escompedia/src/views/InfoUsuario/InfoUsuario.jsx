@@ -1,4 +1,4 @@
-
+import Footer from "../../components/layout/Footer";
 
 const InfoUsuario = ()=>{
 
@@ -27,22 +27,7 @@ const InfoUsuario = ()=>{
 				</div>
 				</div>
 			
-			<footer className="page-footer blue accent-4">
-          <div class="container">
-            <div class="row">
-              <div class="col l12 s12">
-                <h5 class="white-text">Contacto</h5>
-                <p class="grey-text text-lighten-4">Cualquier duda o comentario puedes enviarla al correo escompedia@gmail.com</p>
-              </div>
-            </div>
-          </div>
-          <div class="footer-copyright">
-            <div class="container">
-                © 2021 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="https://www.escom.ipn.mx/">ESCOM</a>
-            </div>
-          </div>
-</footer>
+			<Footer></Footer>
         </main>
     );
 }

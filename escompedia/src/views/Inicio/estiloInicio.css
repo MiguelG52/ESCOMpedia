@@ -1,5 +1,5 @@
-@charset "utf-8";
-/* CSS Document */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 * {
 	box-sizing: border-box;
 }
@@ -14,3 +14,8 @@ body {
     border-radius: 12.5px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2) ;
 }
+
+/* .stroke{
+    -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: black;
+} */

@@ -35,7 +35,7 @@ const Header = () => {
                             <button type="button" onClick={() => firebase.logout()}>Cerrar sesión</button>
                         </Fragment>
                     ):(
-						<nav className="nav-wrapper blue darken-1 space">
+						<nav className="nav-wrapper indigo darken-4">
                         <Fragment>
                             <div className="col s6">
                             <Link to = '/iniciaSesion'>Iniciar Sesión</Link>

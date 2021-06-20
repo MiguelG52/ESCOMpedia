@@ -4,7 +4,7 @@ import 'materialize-css/dist/css/materialize.min.css'
 
 const Search = () => {
     return (
-        	<nav className="nav-wrapper blue darken-1"> 
+        	<nav className="nav-wrapper indigo darken-4"> 
       		<form>
         		<div className="input-field">
           			<input id="search" type="search" required placeholder="¿Buscas algun libro?"/>

@@ -64,10 +64,13 @@ const RegistrarLibro = ()=> {
 		
         <form onSubmit={handleSubmit} className="formRegistrarLibro">
 			<div className="row">
-
+                <div className="col l12 center">
+                    <h4>Registra un libro</h4>
+                </div>
                 <div className="input-field col s6">
                     <div className="blue-text text-darken-2">
                         <div className="center-align">
+                        <i className="material-icons prefix colorIcon">account_circle</i>
                             <input type="text" id="autor" name="autor" value={autor} onChange={handleChange} onBlur={handleBlur} placeholder="Autor"/>
                         </div>
                     </div>
@@ -76,7 +79,8 @@ const RegistrarLibro = ()=> {
                 <div className="input-field col s6">
                     <div className="blue-text text-darken-2">
                         <div className="center-align">
-                            <Input type="text" id="titulo" name="titulo" value={titulo} onChange={handleChange} onBlur={handleBlur} placeholder="Titulo" />
+                        <i className="material-icons prefix colorIcon">Title</i>
+                            <input type="text" id="titulo" name="titulo" value={titulo} onChange={handleChange} onBlur={handleBlur} placeholder="Titulo" />
                         </div>
                     </div>
                 </div>
@@ -84,7 +88,8 @@ const RegistrarLibro = ()=> {
                 <div className="input-field col s6">
                     <div className="blue-text text-darken-2">
                         <div className="center-align">
-                            <Input type="text" id="editorial" name="editorial" value={editorial} onChange={handleChange} onBlur={handleBlur} placeholder="Editorial" />
+                        <i className="material-icons prefix colorIcon">bookmark</i>
+                            <input type="text" id="editorial" name="editorial" value={editorial} onChange={handleChange} onBlur={handleBlur} placeholder="Editorial" />
                         </div>
                     </div>
                 </div>
@@ -92,7 +97,8 @@ const RegistrarLibro = ()=> {
                 <div className="input-field col s6">
                     <div className="blue-text text-darken-2">
                         <div className="center-align">
-                            <Input type="number" id="year" name="year" value={year} onChange={handleChange} onBlur={handleBlur} placeholder="Año" />
+                            <i className="material-icons prefix colorIcon iconLeft">access_time</i>
+                            <input type="number" id="year" name="year" value={year} onChange={handleChange} onBlur={handleBlur} placeholder="Año" />
                         </div>
                     </div>
                 </div>
@@ -100,11 +106,13 @@ const RegistrarLibro = ()=> {
                 <div className="input-field col s6">
                     <div className="blue-text text-darken-2">
                         <div className="center-align">
-                            <Input type="text" id="tema" name="tema" value={tema} onChange={handleChange} onBlur={handleBlur} placeholder="Tema" />
+                        <i className="material-icons prefix colorIcon">book</i>
+                            <input type="text" id="tema" name="tema" value={tema} onChange={handleChange} onBlur={handleBlur} placeholder="Tema" />
                         </div>
                     </div>
                 </div>
                 <div className="input-field col s6">
+                <i className="material-icons prefix colorIcon">group</i>
                     <select name="tipo" id="tipo" value={tipo} onChange={handleChange} onBlur={handleBlur} >
                         <option value="general">General</option>
                         <option value="profesor">Profesor</option>
@@ -113,7 +121,7 @@ const RegistrarLibro = ()=> {
                 
 
                 <div className="file-field input-field col s12">
-                    <div className="btn">
+                    <div className="btn colorSubmit">
                         <span>Imagen de libro</span>
                         <input type="file" name="imagen" id="imagen" ref={imageRef} placeholder="imagen" />
                     </div>
@@ -124,7 +132,7 @@ const RegistrarLibro = ()=> {
 
             </div>
             <div className="center">
-                <button className="btn waves-effect waves-light" type="submit" id="Registrar" name="Registrar">Registrar</button>
+                <button className="btn waves-effect waves-light colorSubmit" type="submit" id="Registrar" name="Registrar">Registrar</button>
             </div>
         </form>
     </div>

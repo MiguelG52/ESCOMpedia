@@ -1,7 +1,11 @@
-    .colorsubmit{
-        background-color: #2979ff;
+.colorSubmit{
+        background-color: #1a237e !important;
         color: white;
     }
+
+.colorIcon{
+    color: #1a237e !important;
+}    
 /* 
 #imagen{
 font-size: 14px;
@@ -22,5 +26,9 @@ font-size: 14px;
     background-color: white;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    padding: 2rem;
+    padding: 0 2rem 2rem 2rem;
+}
+
+.iconLeft{
+    text-align: left !important;
 }
