@@ -49,6 +49,24 @@ class Firebase{
         })
     }
 
+    //Edita un libro
+    editLibro(titulo, autor, editorial, year, tema, tipo, url, libroRef){
+        libroRef.update({
+            titulo,
+            autor, 
+            editorial,
+            year,
+            tema, 
+            tipo,
+            url
+        });
+    }
+
+    //Elimina un libto
+    deleteLibro(libroRef){
+        libroRef.delete();
+    }
+
     //registrar reseña
     async regReview(idBook, autor, text, calificacion){
         const reviews = this.db.collection("Reviews");

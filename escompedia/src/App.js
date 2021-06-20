@@ -10,6 +10,7 @@ import Catalogo from './views/Catalogo/Catalogo';
 import RegistrarLibro from './views/Catalogo/RegistrarLibro';
 import InfoUsuario from './views/InfoUsuario/InfoUsuario';
 import Libro from './views/Catalogo/Libro';
+import Editar from './views/Catalogo/Editar';
 
 function App() {
 
@@ -19,7 +20,8 @@ function App() {
 
   /* Extraemos layout y views desde objeto Routes y Views*/
   const {routeIndex, routeBibliotecas, routeForo, routePerfil, routeSignIn, routeLoginIn, routeCatalogo,
-          roueteCatalogoProfesores, routeRegistrarLibro, routeLibro, routeForoReglas, routeForoPost, routeForoAyuda,routeForoGeneral,routeForoLibros} = Routes
+          roueteCatalogoProfesores, routeRegistrarLibro, routeLibro, routeForoReglas, routeForoPost, routeForoAyuda,routeForoGeneral,routeForoLibros,
+        routeEditar} = Routes
   return (
       <FirebaseProvider>
         <Router>
@@ -34,6 +36,7 @@ function App() {
             <Route exact path={roueteCatalogoProfesores} render={()=><Catalogo tipo="profesor"/>}/>
             <Route exact path={routeRegistrarLibro} component={RegistrarLibro}/>
             <Route exact path={routeLibro} component={Libro}/>
+            <Route exact path={routeEditar} component={Editar}/>
             <Route exact path={routeLoginIn} component={Login}/>
             <Route exact path={routeForoReglas} render={()=> <ForoReglas/>}/>
             <Route exact path={routeForoAyuda} render={()=> <ForoAyuda/>}/>

@@ -17,5 +17,6 @@ const Routes = {
     routeForoAyuda: '/foro/ayuda',
     routeForoGeneral: '/foro/general',
     routeForoLibros:'/foro/libros',
+    routeEditar: '/editar/:bookId'
 }
 export default Routes
