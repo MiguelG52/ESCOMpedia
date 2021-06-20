@@ -41,7 +41,7 @@ const Catalogo = ({tipo})=>{
 
     <div className="row container">
         <div className="col l12 m8 s12">
-          <h2 className="PonerCapital center black-text">{tipo}</h2>
+          <h2 className="center black-text">{tipo==="general"?"De todos los editores":"Hechos por los profesores"}</h2>
         </div>
     </div>
        

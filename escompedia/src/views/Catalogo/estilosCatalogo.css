@@ -46,3 +46,13 @@ body{
     max-height: 40vh !important;
 }
 
+.formReview{
+    border-radius: 5px;
+    background-color: white;
+    margin-top: 2rem;
+    padding: 1rem 2rem 2rem 2rem;
+}
+
+.manita:hover{
+    cursor: pointer;
+}

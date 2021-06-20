@@ -70,7 +70,7 @@ const RegistrarLibro = ()=> {
                 <div className="input-field col s6">
                     <div className="blue-text text-darken-2">
                         <div className="center-align">
-                        <i className="material-icons prefix colorIcon">account_circle</i>
+                            <i className="material-icons prefix colorIcon">account_circle</i>
                             <input type="text" id="autor" name="autor" value={autor} onChange={handleChange} onBlur={handleBlur} placeholder="Autor"/>
                         </div>
                     </div>

@@ -31,8 +31,14 @@ const Header = () => {
                 <div className="header-login">
                     {usuario ? (
                         <Fragment>
-                            <p>Hola: {usuario.displayName }</p>
+                            <nav className="nav-wrapper indigo darken-4">
+                            <div className="col s6">
+                            <p>Hola {usuario.displayName }</p>
+                            </div>
+                            <div className="col s6">
                             <button type="button" onClick={() => firebase.logout()}>Cerrar sesión</button>
+                            </div>
+                            </nav>
                         </Fragment>
                     ):(
 						<nav className="nav-wrapper indigo darken-4">

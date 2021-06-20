@@ -3,6 +3,7 @@ import { useDocumentData } from "react-firebase-hooks/firestore";
 import { useParams } from "react-router-dom";
 import { authContext } from "../../context/authContext";
 import Review from "./review";
+import NavCatalogo from "./NavCatalogo";
 
 const Libro = ()=>{
     const { bookId } = useParams(); //Obtiene el id del libro desde los parametros de la url
@@ -10,6 +11,10 @@ const Libro = ()=>{
     const libroRef = firebase.getDocument("Libros", bookId);
     const [libro, loading] = useDocumentData(libroRef); //Obtiene los datos de un documento
     console.log(libro);
+
+    const addFavorite = ()=>{
+        console.log("Favoritooo");
+    }
 
     if(loading){
         return <div className="row container">
@@ -31,27 +36,29 @@ const Libro = ()=>{
     }
     return(
         <>
+        <NavCatalogo/>
         <main>
-        <div className="row container">
-            <div className="col l12 m8 s12">
-                <h2 className="center white-text"> <i> Informacion del titulo </i></h2>
-            </div>
-        </div>
-
+            <h2 className="center white-text indigo darken-4">Información del libro</h2>
             {libro && (
                 <div className="row container">
-                    <div className="col l8 m8 s12">
-                        <div className="card">
-                        <div className="card-content">
-                            <span className="card-title">Titulo: {libro.titulo}</span>
-                            <h6>Autor: {libro.autor}</h6>
-                            <h6>Año: {libro.year}</h6>
-                            <h6>Editorial: {libro.editorial}</h6>
+                    <div className="card horizontal col s6 offset-s3">
+                        <div className="card-image">
+                            <img src={libro.url} className="imageBook"/>
                         </div>
+                        <div className="card-stacked">
+                            <div className="card-content">
+                                <span className="card-title">Titulo: {libro.titulo}</span>
+                                <span className="card-title">Autor: {libro.autor}</span>
+                                <span className="card-title">Año: {libro.year}</span>
+                                <span className="card-title">Editorial: {libro.editorial}</span>
+                                <span className="card-title">Tema: {libro.tema}</span>
+                            </div>
+                            <div className="card-action manita" onClick={addFavorite}>
+                                <a className="indigo-text text-darken-4">Agregar a favoritos!</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
                 )
             }
         </main>
