@@ -45,8 +45,27 @@ class Firebase{
             year,
             tema, 
             tipo,
-            url
+            url,
+            InBibliotecaOf: []
         })
+    }
+
+    //Edita un libro
+    editLibro(titulo, autor, editorial, year, tema, tipo, url, libroRef){
+        libroRef.update({
+            titulo,
+            autor, 
+            editorial,
+            year,
+            tema, 
+            tipo,
+            url
+        });
+    }
+
+    //Elimina un libto
+    deleteLibro(libroRef){
+        libroRef.delete();
     }
 
     //registrar reseña
@@ -58,6 +77,27 @@ class Firebase{
             text,
             calificacion,
             createdAt: firebase.firestore.FieldValue.serverTimestamp()
+        })
+
+
+    }
+
+    // //Crea una biblioteca [Por cuestiones de tiempo solo sera una]
+    // createBiblioteca(userId, bibliotecaName){
+    //     const biblioteca = this.db.collection(`Bibliotecas/${userId}/misBibliotecas`);
+    //     biblioteca.add({
+    //         bibliotecaName
+    //     })
+    // } 
+    
+    addBiblioteca(usuario, idbook){
+        const libroRef = this.getDocument("Libros", idbook);
+        libroRef.get().then(doc =>{
+            const users = doc.data().InBibliotecaOf;
+            console.log("Users: " + users)
+            libroRef.update({
+                InBibliotecaOf: [...users, usuario]
+            })
         })
     }
 

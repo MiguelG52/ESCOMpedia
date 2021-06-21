@@ -56,3 +56,9 @@ body{
 .manita:hover{
     cursor: pointer;
 }
+
+.buttonsEditar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

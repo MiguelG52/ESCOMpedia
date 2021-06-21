@@ -10,6 +10,8 @@ import Footer from "../../components/layout/Footer";
 
 
 const Catalogo = ({tipo})=>{
+    const userType = "Administrador";
+
     const {firebase} = useContext(authContext);
     const librosRef = firebase.getCollection("Libros");
     const librosQuery = librosRef.where("tipo", "==", tipo);
@@ -60,7 +62,13 @@ const Catalogo = ({tipo})=>{
                     <div className="card-action">
                     <Link className="indigo-text text-darken-4" to={`/libro/${id}`}>Detalles</Link>
                     </div>
-                </div> </div>))
+                    {userType==="Administrador"?(
+                       <div className="card-action">
+                       <Link className="indigo-text text-darken-4" to={`/editar/${id}`}>Editar</Link>
+                       </div>
+                    ):""}
+                </div> 
+              </div>))
             }      
     </div>
         <Footer />

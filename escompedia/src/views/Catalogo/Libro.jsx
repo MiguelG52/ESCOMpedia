@@ -7,13 +7,13 @@ import NavCatalogo from "./NavCatalogo";
 
 const Libro = ()=>{
     const { bookId } = useParams(); //Obtiene el id del libro desde los parametros de la url
-    const {firebase} = useContext(authContext); 
+    const {firebase, usuario} = useContext(authContext); 
     const libroRef = firebase.getDocument("Libros", bookId);
     const [libro, loading] = useDocumentData(libroRef); //Obtiene los datos de un documento
     console.log(libro);
 
     const addFavorite = ()=>{
-        console.log("Favoritooo");
+        firebase.addBiblioteca(usuario.displayName, bookId);
     }
 
     if(loading){
@@ -53,9 +53,18 @@ const Libro = ()=>{
                                 <span className="card-title">Editorial: {libro.editorial}</span>
                                 <span className="card-title">Tema: {libro.tema}</span>
                             </div>
-                            <div className="card-action manita" onClick={addFavorite}>
-                                <a className="indigo-text text-darken-4">Agregar a favoritos!</a>
-                            </div>
+                            {libro.InBibliotecaOf.includes(usuario.displayName)?(
+                                <div className="card-action center">
+                                    <a className="indigo-text text-darken-4">Ya se encuentra en tu biblioteca!</a>
+                                </div>
+                            ):(
+                                <div className="card-action manita" onClick={addFavorite}>
+                                    <a className="indigo-text text-darken-4">Agregar a biblioteca!</a>
+                                </div>
+                            )
+
+                            }
+                            
                         </div>
                     </div>
                 </div>
