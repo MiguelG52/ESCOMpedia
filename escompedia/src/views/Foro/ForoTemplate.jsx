@@ -14,12 +14,19 @@ const State_Inicial={
     titulo: '',
     descripcion:'',
 }
-const ForoTemplate = ({nombreForo, nombreBaseDeDatos,ruta, tipo}) => {
+const ForoTemplate = ({nombreForo, nombreBaseDeDatos, tipo}) => {
+    
     const [Form, setForm] = useState(false);
     const {usuario,firebase} = useContext(authContext); 
     const posts = firebase.getCollection(nombreBaseDeDatos);
     const postsQuery = posts.where("tipo", "==", tipo);
     const [Discusiones, loading] = useCollectionData(postsQuery, {idField: "id"});
+	let id = ''
+	try{
+		id = usuario.uid;
+	}catch(error){
+
+	}
 
     const handleNuevaEntrada = (e) =>{
         e.preventDefault();
@@ -57,6 +64,7 @@ const ForoTemplate = ({nombreForo, nombreBaseDeDatos,ruta, tipo}) => {
                                     <div className="grid grid-cols-1" key={index}>
                                         <Post
                                             elemento={elemento}
+                                            id={id}
                                         />
                                     </div>  
                                 )

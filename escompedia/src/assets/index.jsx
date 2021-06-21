@@ -10,4 +10,9 @@ import musicIcon from './img/music.svg';
 import settingsIcon from './img/settings.svg';
 import arrowRightIcon from './img/right.svg';
 import likeIcon  from './img/like.svg';
-export {foroIcon, postIcon, usersIcon, bookIcon, chatIcon, gameIcon, helpIcon, movieIcon, musicIcon, settingsIcon, arrowRightIcon, likeIcon};
+import profileIcon from './img/profile.svg'
+import jobIcon from './img/job.svg';
+import schoolIcon from './img/school.svg';
+import changePhoto from './img/changePhoto.svg'
+import editText from './img/edit-text.svg'
+export {foroIcon, postIcon, usersIcon, bookIcon, chatIcon, gameIcon, helpIcon, movieIcon, musicIcon, settingsIcon, arrowRightIcon, likeIcon, editText, profileIcon, jobIcon, schoolIcon, changePhoto};

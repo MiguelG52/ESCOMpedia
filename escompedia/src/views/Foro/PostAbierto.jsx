@@ -10,6 +10,7 @@ const PostAbierto = () => {
     const postRef = firebase.getDocument("Foros", id);
     const [post, loading] = useDocumentData(postRef);
     const [Comentario, setComentario] = useState({});
+    
 
     const votar = () =>{
         const Total = post.votos+1;

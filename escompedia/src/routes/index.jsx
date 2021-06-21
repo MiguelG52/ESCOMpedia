@@ -4,7 +4,7 @@ const Routes = {
     routeIndex: '/',
     routeBibliotecas: '/bibliotecas',
     routeForo: '/foro',
-    routePerfil: '/perfil',
+    routePerfil: '/perfil/:id',
     routeSignIn: '/registrarse',
     routeLoginIn: '/iniciaSesion',
     routeInfoUser: '/infoUsuario',

@@ -5,7 +5,7 @@ const AlertaError = (descripcion) => {
         <div className="flex bg-red-200 p-4">
             <div className="mr-4">
                 <div className="h-10 w-10 text-white bg-red-600 rounded-full flex justify-center items-center">
-                    <i className="material-icons">report</i>
+                    <p>!</p>
                 </div>
             </div>
             <div className="flex justify-between w-full">

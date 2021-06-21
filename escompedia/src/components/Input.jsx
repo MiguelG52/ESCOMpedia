@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Input = ({id, name, placeholder, type, label, onChange, value, handleBlur}) => {
     return (
-        <div>
+        <div className="text-4xl">
             <label htmlFor={id}>{label}</label>
             <input
                 type={type}

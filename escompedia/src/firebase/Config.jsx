@@ -91,6 +91,22 @@ class Firebase{
             haVotado:[]
         })
     }
+    async regUsuarios(nombre, email,pass, escuela, tipo, id){
+        const usuarioNuevo = this.db.collection("Usuarios")
+        await usuarioNuevo.add({
+            id,
+            nombre,
+            email,
+            pass,
+            escuela,
+            tipo,
+            fecha: firebase.firestore.FieldValue.serverTimestamp(),
+            descripcion:"Añade una descripción",
+            ubicacion: "Añade el lugar donde vives",
+            trabajo:"Añade un empleo",
+            url:'https://firebasestorage.googleapis.com/v0/b/escompedia-74d8e.appspot.com/o/profile%2Fpp.png?alt=media&token=87a7d498-3fd8-4242-a680-a0142226f841'
+        })
+    } 
 }
 
 export default new Firebase();
