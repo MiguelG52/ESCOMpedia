@@ -1,7 +1,6 @@
 import React, { useContext, useRef, useState } from "react";
-import { profileIcon, jobIcon, schoolIcon, editText, changePhoto } from "../../assets";
+import { jobIcon, schoolIcon, editText, changePhoto } from "../../assets";
 import { authContext } from "../../context/authContext";
-import BotonEditar from "./BotonEditar";
 
 export default function Profile({descripcion, escuela, fecha, nombre,trabajo, ubicacion, id, url}) {
     

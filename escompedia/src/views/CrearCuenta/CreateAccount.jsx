@@ -28,8 +28,6 @@ const CreateAccount = () => {
             await firebase.logout();
             historial.push(routes.routeLoginIn);
             await firebase.regUsuarios(nombre, email, pass, escuela, tipo, id);
-            
-            
         }catch(error){
             setError(error.message)
         }
