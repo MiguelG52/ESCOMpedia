@@ -2,7 +2,7 @@ import NavCatalogo from "./NavCatalogo";
 import "./estilosCatalogo.css";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import { authContext } from "../../context/authContext";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import 'materialize-css/dist/css/materialize.min.css';
 import Footer from "../../components/layout/Footer";
@@ -10,14 +10,26 @@ import Footer from "../../components/layout/Footer";
 
 
 const Catalogo = ({tipo})=>{
-    const userType = "Administrador";
-
-    const {firebase} = useContext(authContext);
+    const {firebase, usuario} = useContext(authContext);
     const librosRef = firebase.getCollection("Libros");
     const librosQuery = librosRef.where("tipo", "==", tipo);
     const [libros, loading] = useCollectionData(librosQuery, {idField: "id"});
 
-    if(loading){    
+    const [userId, setUserId] = useState("");
+    useEffect(() => {
+      if(usuario){
+        if(usuario.uid){
+          const {uid} = usuario;
+          setUserId(uid);
+        }
+      }
+    }, [usuario])
+
+    const usuarioRef = firebase.getCollection("Usuarios");
+    const usuarioQuery = usuarioRef.where("id", "==", userId);
+    const [usuarioFirebase, loadingUser] = useCollectionData(usuarioQuery, {idField: "id"});
+
+    if(loading || loadingUser){    
         return <div className="row container">
           <div className="col l12 m12 s12 center"> 
               <div className="preloader-wrapper big active">
@@ -34,13 +46,11 @@ const Catalogo = ({tipo})=>{
         </div>
           </div>
         </div>
-          
     }
-
+    console.log("Tipo usuario: " + usuarioFirebase[0].tipo)
     return( 
     <>
     <NavCatalogo/>
-
     <div className="row container">
         <div className="col l12 m8 s12">
           <h2 className="center black-text">{tipo==="general"?"De todos los editores":"Hechos por los profesores"}</h2>
@@ -60,9 +70,9 @@ const Catalogo = ({tipo})=>{
                         <h6>Autor: {autor} </h6>
                     </div>
                     <div className="card-action">
-                    <Link className="indigo-text text-darken-4" to={`/libro/${id}`}>Detalles</Link>
+                    <Link className="indigo-text text-darken-4" to={`/libro/${id}`}>Detalles {usuarioFirebase.tipo}</Link>
                     </div>
-                    {userType==="Administrador"?(
+                    {usuarioFirebase[0].tipo==="administrador"?(
                        <div className="card-action">
                        <Link className="indigo-text text-darken-4" to={`/editar/${id}`}>Editar</Link>
                        </div>

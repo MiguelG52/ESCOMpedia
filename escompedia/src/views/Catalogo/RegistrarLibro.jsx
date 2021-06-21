@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef} from 'react'
+import React, { useContext, useEffect, useRef, useState} from 'react'
 import { Input } from '../../components/Input';
 import { authContext } from '../../context/authContext';
 import { useValidacion } from '../../hooks';
@@ -7,6 +7,7 @@ import "./RegistrarLibro.css";
 import { useHistory } from "react-router-dom";
 import Footer from '../../components/layout/Footer';
 import M from "materialize-css"
+import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 const STATE_INICIAL = {
     autor: "",
@@ -25,13 +26,58 @@ const validarCampos = (valores) =>{
 }
 
 const RegistrarLibro = ()=> {
-    const {firebase} = useContext(authContext);
+    const {firebase,usuario} = useContext(authContext);
 
     const {Valores, handleChange, handleSubmit, handleBlur} = useValidacion(STATE_INICIAL,validarCampos, registrarLibro);
     const {autor, titulo, editorial, year, tema, tipo} = Valores;
     const imageRef = useRef(null);
     const historial = useHistory();
+    const [userType, setUserType] = useState("alumno");
+    const [userId, setUserId] = useState("");
+    
+    useEffect(() => {
+      if(usuario){
+        if(usuario.uid){
+          const {uid} = usuario;
+          setUserId(uid);
+        }
+      }
+    }, [usuario])
 
+    useEffect(() => {
+        var elems = document.querySelectorAll('select');
+        M.FormSelect.init(elems, "");
+    }, [userType])
+
+
+    const usuarioRef = firebase.getCollection("Usuarios");
+    const usuarioQuery = usuarioRef.where("id", "==", userId);
+    const [usuarioFirebase, loading] = useCollectionData(usuarioQuery, {idField: "id"});
+
+    if(loading){    
+        return <div className="row container">
+          <div className="col l12 m12 s12 center"> 
+              <div className="preloader-wrapper big active">
+              <div className="spinner-layer spinner-blue-only">
+              <div className="circle-clipper left">
+              <div className="circle"></div>
+              </div>
+              <div className="gap-patch">
+              <div className="circle"></div>
+             </div><div className="circle-clipper right">
+            <div className="circle"></div>
+            </div>
+          </div>
+        </div>
+          </div>
+        </div>
+    }
+
+        console.log("Tipo usuario: " + usuarioFirebase[0].tipo)
+        if(!(usuarioFirebase[0].tipo === userType)){
+            setUserType(usuarioFirebase[0].tipo);
+        }
+      
     function registrarLibro (){
         const storage = firebase.getStorage();
         const image = imageRef.current.files[0];
@@ -50,11 +96,6 @@ const RegistrarLibro = ()=> {
             }
         )
     }
-
-    useEffect(() => {
-            var elems = document.querySelectorAll('select');
-            M.FormSelect.init(elems, "");
-    }, [])
 
     return (
         <>
@@ -115,7 +156,7 @@ const RegistrarLibro = ()=> {
                 <i className="material-icons prefix colorIcon">group</i>
                     <select name="tipo" id="tipo" value={tipo} onChange={handleChange} onBlur={handleBlur} >
                         <option value="general">General</option>
-                        <option value="profesor">Profesor</option>
+                        {userType==="profesor" ||userType==="administrador"?(<option value="profesor">Profesor</option>):""}
                     </select>
                 </div>
                 
