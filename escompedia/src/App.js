@@ -11,6 +11,7 @@ import RegistrarLibro from './views/Catalogo/RegistrarLibro';
 import InfoUsuario from './views/InfoUsuario/InfoUsuario';
 import Libro from './views/Catalogo/Libro';
 import Editar from './views/Catalogo/Editar';
+import Biblioteca from './views/Biblioteca/Biblioteca';
 
 function App() {
 
@@ -28,7 +29,7 @@ function App() {
           <Header/>
           <Switch>
             <Route exact path={routeIndex} component={Index}/>
-            <Route exact path={routeBibliotecas}/>
+            <Route exact path={routeBibliotecas} component={Biblioteca}/>
             <Route exact path={routeForo} component={Foro}/>
             <Route exact path={routePerfil} component={InfoUsuario}/>
             <Route exact path={routeSignIn} component={CreateAccount}/>
