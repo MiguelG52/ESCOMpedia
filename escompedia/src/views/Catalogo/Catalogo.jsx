@@ -57,17 +57,19 @@ const Catalogo = ({tipo})=>{
         </div>
     </div>
        
+       
     <div className="row container">
             {libros &&
                libros.map (({autor, titulo, id, url}) => (
-                <div className="row col l3 m6 s12" key={id}> 
+                <div className="row col l4 m6 s12" key={id}> 
                  <div className="card">
                      <div className="card-image">
                      <img src={url} alt="imagen de muestra" className="imageBook"/>
                      </div>
                     <div className="card-content">
-                        <span className="card-title indigo-text text-darken-4 center Titulo">{titulo}</span>                                   
-                        <h6>Autor: {autor} </h6>
+                        <span className="card-title indigo-text text-darken-4 center">{titulo}</span>
+                        <h6>Autor: {autor} </h6>                        
+                        
                     </div>
                     <div className="card-action">
                     <Link className="indigo-text text-darken-4" to={`/libro/${id}`}>Detalles {usuarioFirebase.tipo}</Link>

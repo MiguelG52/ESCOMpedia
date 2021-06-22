@@ -43,7 +43,7 @@ body{
 }
 
 .imageBook{
-    max-height: 40vh !important;
+    max-height: 50vh !important;
 }
 
 .formReview{
@@ -62,3 +62,4 @@ body{
     flex-direction: row;
     justify-content: space-around;
 }
+

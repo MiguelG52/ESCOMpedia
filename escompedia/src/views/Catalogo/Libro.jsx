@@ -48,10 +48,12 @@ const Libro = ()=>{
                         <div className="card-stacked">
                             <div className="card-content">
                                 <span className="card-title">Titulo: {libro.titulo}</span>
-                                <span className="card-title">Autor: {libro.autor}</span>
-                                <span className="card-title">Año: {libro.year}</span>
-                                <span className="card-title">Editorial: {libro.editorial}</span>
-                                <span className="card-title">Tema: {libro.tema}</span>
+                                <p>
+                                    <h6>Autor: {libro.autor}</h6>
+                                    <h6>Año: {libro.year}</h6>
+                                    <h6>Editorial: {libro.editorial}</h6>
+                                    <h6>Tema: {libro.tema}</h6>
+                                </p>
                             </div>
                             {libro.InBibliotecaOf.includes(usuario.displayName)?(
                                 <div className="card-action center">
