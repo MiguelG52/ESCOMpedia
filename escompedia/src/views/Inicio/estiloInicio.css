@@ -19,3 +19,15 @@ body {
     -webkit-text-stroke-width: 0.5px;
   -webkit-text-stroke-color: black;
 } */
+
+
+
+@media (max-width: 992px) {
+    .slider h1{
+        /* font-size: xx-large; */
+        font-size: 40px;
+    }
+    .slider h4{
+        font-size: 20px;
+    }
+}

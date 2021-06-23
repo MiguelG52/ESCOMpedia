@@ -12,22 +12,22 @@ const Header = () => {
 
     const {usuario, firebase} = useContext(authContext);
     return (
-        <header className="row flexx">
-            <div className ="col l1.5">
+        <header className="row">
+            <div className ="col m1 l1 imageContainer">
                 <div className="header-logo">
                     <p> <img src={logo} alt="logotipo"/></p>
                 </div>
             </div>  
 
-            <div className ="col l4">
+            <div className ="col s12 m12 l3 searchContainer">
                  <Search/>
             </div>
 
-            <div className ="col l5.5">
+            <div className ="col s12 m7 l5 navContainer">
                     <Nav/>
             </div>
             
-            <div className ="col l3 center">           
+            <div className ="col s12 l3 m5 center nameContainer">           
                 <div className="header-login">
                     {usuario ? (
                         <Fragment>
@@ -41,7 +41,7 @@ const Header = () => {
                             </nav>
                         </Fragment>
                     ):(
-						<nav className="nav-wrapper indigo darken-4">
+						<nav className="nav-wrapper indigo darken-4 l3">
                         <Fragment>
                             <div className="col s6">
                             <Link to = '/iniciaSesion'>Iniciar Sesión</Link>
@@ -50,7 +50,6 @@ const Header = () => {
                             <Link to = '/registrarse'> Crear Cuenta</Link>
                             </div>
                         </Fragment>
-							
 							</nav>
                     )}
                 </div>

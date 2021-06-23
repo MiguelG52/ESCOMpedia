@@ -1,5 +1,4 @@
 // import FormBiblioteca from "./FormBiblioteca"
-import "./Biblioteca.css"
 import { useContext, useEffect, useState } from "react";
 import { authContext } from "../../context/authContext";
 import { useCollectionData } from "react-firebase-hooks/firestore";
@@ -63,7 +62,7 @@ const Biblioteca = ()=>{
             {libros &&
                 libros.map(({ autor, titulo, id, url, InBibliotecaOf }) => (
                     InBibliotecaOf.includes(usuario.displayName)?(
-                    <div className="row col l3 m6 s12" key={id}>
+                    <div className="row col l4 m6 s12" key={id}>
                         <div className="card">
                             <div className="card-image">
                                 <img src={url} alt="imagen de muestra" className="imageBook" />

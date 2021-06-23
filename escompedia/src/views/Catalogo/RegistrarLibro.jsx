@@ -105,37 +105,37 @@ const RegistrarLibro = ()=> {
 		
         <form onSubmit={handleSubmit} className="formRegistrarLibro">
 			<div className="row">
-                <div className="col l12 center">
+                <div className="col s12 center">
                     <h4>Registra un libro</h4>
                 </div>
-                <div className="input-field col s6">
+                <div className="input-field col s12 l6">
                     <div className="blue-text text-darken-2">
                         <div className="center-align">
-                            <i className="material-icons prefix colorIcon">account_circle</i>
+                            <i className="material-icons prefix colorIcon iconLeft">account_circle</i>
                             <input type="text" id="autor" name="autor" value={autor} onChange={handleChange} onBlur={handleBlur} placeholder="Autor"/>
                         </div>
                     </div>
                 </div>
 
-                <div className="input-field col s6">
+                <div className="input-field col s12 l6">
                     <div className="blue-text text-darken-2">
                         <div className="center-align">
-                        <i className="material-icons prefix colorIcon">Title</i>
+                        <i className="material-icons prefix colorIcon iconLeft">Title</i>
                             <input type="text" id="titulo" name="titulo" value={titulo} onChange={handleChange} onBlur={handleBlur} placeholder="Titulo" />
                         </div>
                     </div>
                 </div>
 
-                <div className="input-field col s6">
+                <div className="input-field col s12 l6">
                     <div className="blue-text text-darken-2">
                         <div className="center-align">
-                        <i className="material-icons prefix colorIcon">bookmark</i>
+                        <i className="material-icons prefix colorIcon iconLeft">bookmark</i>
                             <input type="text" id="editorial" name="editorial" value={editorial} onChange={handleChange} onBlur={handleBlur} placeholder="Editorial" />
                         </div>
                     </div>
                 </div>
 
-                <div className="input-field col s6">
+                <div className="input-field col s12 l6">
                     <div className="blue-text text-darken-2">
                         <div className="center-align">
                             <i className="material-icons prefix colorIcon iconLeft">access_time</i>
@@ -144,16 +144,16 @@ const RegistrarLibro = ()=> {
                     </div>
                 </div>
 
-                <div className="input-field col s6">
+                <div className="input-field col s12 l6">
                     <div className="blue-text text-darken-2">
                         <div className="center-align">
-                        <i className="material-icons prefix colorIcon">book</i>
+                        <i className="material-icons prefix colorIcon iconLeft">book</i>
                             <input type="text" id="tema" name="tema" value={tema} onChange={handleChange} onBlur={handleBlur} placeholder="Tema" />
                         </div>
                     </div>
                 </div>
-                <div className="input-field col s6">
-                <i className="material-icons prefix colorIcon">group</i>
+                <div className="input-field col s12 l6">
+                <i className="material-icons prefix colorIcon iconLeft">group</i>
                     <select name="tipo" id="tipo" value={tipo} onChange={handleChange} onBlur={handleBlur} >
                         <option value="general">General</option>
                         {userType==="profesor" ||userType==="administrador"?(<option value="profesor">Profesor</option>):""}

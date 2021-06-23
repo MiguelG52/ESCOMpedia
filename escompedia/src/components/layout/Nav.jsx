@@ -17,21 +17,21 @@ const Nav = () => {
 	}
 	return (
         	<nav className="nav-wrapper indigo darken-4"> 
-			<div className="col l2">
+			<div className="col s2">
 				<Link to={routeIndex}>Inicio</Link>
 			</div>
-			<div className="col l3">
+			<div className="col s3">
            		<Link to={routeBibliotecas}>Bibliotecas</Link>
 			</div>
-			<div className="col l2">
+			<div className="col s2">
            		<Link to={routeForo}>Foro</Link>
 			</div>
 			{usuario ? (
-				<div className="col l2">
+				<div className="col s2">
             		<Link  to ={`/perfil/${id}`}>Perfil</Link>
 				</div>
 			):null}
-			<div className="col l3">
+			<div className="col s3">
              	<Link  to ={routeCatalogo}>Catálogo</Link>
 			</div>
 			</nav>
