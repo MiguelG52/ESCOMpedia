@@ -45,13 +45,13 @@ const Review = ({bookId})=>{
                 <div className="input-field col s12">
                     <div className="center-align">
                         <i className="material-icons prefix colorIcon iconLeft">rate_review</i>
-                        <input type="text" id="review" name="review" placeholder="Review" onChange={handleChange} onBlur={handleBlur} value={review} />
+                        <input type="text" id="review" name="review" placeholder="Review" onBlur={handleBlur} onChange={handleChange} value={review} />
                     </div>
                 </div>
 
                 {Errores.review &&
                     <div className="center">
-                        <p className="card-panel pink accent-4">{Errores.review}</p>
+                        <p className="card-panel pink accent-4 text-white">{Errores.review}</p>
                     </div>
                 }
                 <div className="input-field col s6">
