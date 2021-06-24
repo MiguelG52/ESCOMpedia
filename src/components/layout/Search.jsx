@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './styles.css'
 import 'materialize-css/dist/css/materialize.min.css'
 
+
 const Search = () => {
-    return (
+    
+	const [Buscar, setBuscar] = useState('')
+	return (
         	<nav className="nav-wrapper indigo darken-4"> 
       		<form>
         		<div className="input-field">
