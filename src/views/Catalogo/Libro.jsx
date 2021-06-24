@@ -43,7 +43,7 @@ const Libro = ()=>{
                 <div className="row container">
                     <div className="card horizontal col s6 offset-s3">
                         <div className="card-image">
-                            <img src={libro.url} className="imageBook" alt="Imagen de libro"/>
+                            <img src={libro.url} className="imageBookDetalles" alt="Imagen de libro"/>
                         </div>
                         <div className="card-stacked">
                             <div className="card-content">

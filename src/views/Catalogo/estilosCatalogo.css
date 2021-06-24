@@ -43,6 +43,10 @@ body{
 }
 
 .imageBook{
+    height: 450px;
+}
+
+.imageBookDetalles{
     height: 50vh;
 }
 
