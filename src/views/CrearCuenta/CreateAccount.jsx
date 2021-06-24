@@ -5,7 +5,7 @@ import validarCrearCuenta from '../../const/validaciones/sign';
 import useValidacion from '../../hooks/useValidacion';
 import {authContext} from '../../context/authContext';
 import routes from '../../routes'
-import Error from '../../components/error';
+// import Error from '../../components/error';
 
 const STATE_INICIAL = {
     nombre: "",
@@ -33,6 +33,7 @@ const CreateAccount = () => {
         }
     }
 
+    console.log(error);
 
     return (
         <div>

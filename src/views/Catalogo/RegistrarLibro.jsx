@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useRef, useState} from 'react'
-import { Input } from '../../components/Input';
 import { authContext } from '../../context/authContext';
 import { useValidacion } from '../../hooks';
 import NavCatalogo from './NavCatalogo';
@@ -22,7 +21,7 @@ const STATE_INICIAL = {
 const RegistrarLibro = ()=> {
     const {firebase,usuario} = useContext(authContext);
 
-    const {Valores, Errores, handleChange, handleSubmit, handleBlur} = useValidacion(STATE_INICIAL,validarCamposCatalogo, registrarLibro);
+    const {Valores, Errores, handleChange, handleSubmit} = useValidacion(STATE_INICIAL,validarCamposCatalogo, registrarLibro);
     const {autor, titulo, editorial, year, tema, tipo} = Valores;
     const imageRef = useRef(null);
     const historial = useHistory();

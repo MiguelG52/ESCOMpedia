@@ -1,10 +1,10 @@
 import './App.css';
-import React, { useContext } from "react";
+// import React, { useContext } from "react";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Header from './components/layout/Header';
 import Routes from './routes'
 import{CreateAccount, Foro, Login, ForoReglas, ForoAyuda, ForoGeneral, ForoLibros, PostAbierto, Index} from './views'
-import { authContext, FirebaseProvider } from './context/authContext';
+import { FirebaseProvider } from './context/authContext';
 import Catalogo from './views/Catalogo/Catalogo';
 import RegistrarLibro from './views/Catalogo/RegistrarLibro';
 import InfoUsuario from './views/InfoUsuario/InfoUsuario';

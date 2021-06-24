@@ -10,6 +10,9 @@ function Post({elemento, id}){
     const query = usuariosCollection.where("id", "==", id);
     const [user, loading] = useCollectionData(query, {idField: "id"});
 
+    console.log(user);
+    console.log(loading);
+
     return (
             <div className="rounded-lg shadow-lg w-full p-2  m-2 flex items-center gap-4 border">
                 <div className="bg-green-500 h-20 w-20 flex items-center justify-center rounded-full">

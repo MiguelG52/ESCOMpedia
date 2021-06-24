@@ -1,7 +1,6 @@
 import "./estilosCatalogo.css";
 import { useContext, useEffect } from "react";
 import { useCollectionData} from "react-firebase-hooks/firestore";
-import { Input } from "../../components/Input";
 import { authContext } from "../../context/authContext";
 import { useValidacion } from "../../hooks";
 import M from "materialize-css"

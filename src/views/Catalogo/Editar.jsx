@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef} from "react";
 import { useDocumentDataOnce } from "react-firebase-hooks/firestore";
 import { useHistory, useParams } from "react-router-dom";
 import { authContext } from "../../context/authContext";
@@ -23,7 +23,7 @@ const Editar = ()=>{
     const libroRef = firebase.getDocument("Libros", bookId);
     const [libro, loading] = useDocumentDataOnce(libroRef); //Obtiene los datos de un documento
 
-    const {Valores, Errores, handleChange, handleSubmit, handleBlur, setValores} = useValidacion(STATE_INICIAL,validarCamposCatalogo, ()=>{});
+    const {Valores, Errores, handleChange, handleSubmit, setValores} = useValidacion(STATE_INICIAL,validarCamposCatalogo, ()=>{});
     const {autor, titulo, editorial, year, tema, tipo} = Valores;
     const imageRef = useRef(null);
     const historial = useHistory();
@@ -42,6 +42,7 @@ const Editar = ()=>{
             var elems = document.querySelectorAll('select');
             M.FormSelect.init(elems);
         }
+        // eslint-disable-next-line
     }, [loading])
     
     function editarLibro (){

@@ -1,28 +1,12 @@
 // import FormBiblioteca from "./FormBiblioteca"
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { authContext } from "../../context/authContext";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import { Link } from "react-router-dom";
 // import M from "materialize-css"
 
 const Biblioteca = ()=>{
-    //-------------------Por cuestiones de tiempo solo se podra tener una----------------
-    // const [bibliotecaCollection, setBibliotecaCollection] = useState("")
-    // useEffect(() => {
-    //     if(usuario){
-    //         setBibliotecaCollection(firebase.getCollection(`Bibliotecas/${usuario.displayName}/misBibliotecas`));
-    //     }
-    // }, [usuario]);
-    // const [bibliotecas, loading] = useCollectionData(bibliotecaCollection, {idField: "id"});
-    // useEffect(() => {
-    //     var elems = document.querySelectorAll('select');
-    //     M.FormSelect.init(elems, "");
-    // }, [bibliotecas]);
-    // const [bibliotecaName, setBibliotecaName] = useState("");
-    // const changeBiblioteca = (event) => {
-    //     console.log(event.target.value);
-    //     setBibliotecaName(event.target.value);
-    // }
+
     const {firebase, usuario} = useContext(authContext);
     const librosRef = firebase.getCollection("Libros");
     const [libros, loading] = useCollectionData(librosRef, {idField: "id"});

@@ -43,7 +43,7 @@ const Libro = ()=>{
                 <div className="row container">
                     <div className="card horizontal col s6 offset-s3">
                         <div className="card-image">
-                            <img src={libro.url} className="imageBook"/>
+                            <img src={libro.url} className="imageBook" alt="Imagen de libro"/>
                         </div>
                         <div className="card-stacked">
                             <div className="card-content">
@@ -57,11 +57,11 @@ const Libro = ()=>{
                             </div>
                             {libro.InBibliotecaOf.includes(usuario.displayName)?(
                                 <div className="card-action center">
-                                    <a className="indigo-text text-darken-4">Ya se encuentra en tu biblioteca!</a>
+                                    <div className="indigo-text text-darken-4">Ya se encuentra en tu biblioteca!</div>
                                 </div>
                             ):(
                                 <div className="card-action manita" onClick={addFavorite}>
-                                    <a className="indigo-text text-darken-4">Agregar a biblioteca!</a>
+                                    <div className="indigo-text text-darken-4">Agregar a biblioteca!</div>
                                 </div>
                             )
 

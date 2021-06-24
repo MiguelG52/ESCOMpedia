@@ -14,14 +14,14 @@ const Index = () => {
 
   useEffect(() => {
     var elems = document.querySelectorAll('.slider');
-    var instances = M.Slider.init(elems, {
+    M.Slider.init(elems, {
       indicators: false,
       interval: 3000,
       height: 500
     });
     M.AutoInit();
     var parallax = document.querySelectorAll('.parallax');
-    var instances = M.Parallax.init(parallax);
+    M.Parallax.init(parallax);
 
   }, [])
 

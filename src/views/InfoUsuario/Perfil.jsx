@@ -1,5 +1,5 @@
 import React, { useContext, useRef, useState } from "react";
-import { jobIcon, schoolIcon, editText, changePhoto } from "../../assets";
+import { jobIcon, schoolIcon, editText} from "../../assets";
 import { authContext } from "../../context/authContext";
 
 export default function Profile({descripcion, escuela, fecha, nombre,trabajo, ubicacion, id, url}) {
@@ -16,7 +16,7 @@ export default function Profile({descripcion, escuela, fecha, nombre,trabajo, ub
 
     const subeImg = (e) => {
 
-        const image = imageRef.current.files[0];
+        // imageRef.current.files[0];
         
         
     }
