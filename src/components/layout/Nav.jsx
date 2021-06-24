@@ -20,9 +20,11 @@ const Nav = () => {
 			<div className="col s2">
 				<Link to={routeIndex}>Inicio</Link>
 			</div>
-			<div className="col s3">
-           		<Link to={routeBibliotecas}>Bibliotecas</Link>
-			</div>
+			{usuario ? (
+				<div className="col s3">
+				<Link to={routeBibliotecas}>Bibliotecas</Link>
+				 </div>
+			):null}
 			<div className="col s2">
            		<Link to={routeForo}>Foro</Link>
 			</div>
@@ -31,9 +33,11 @@ const Nav = () => {
             		<Link  to ={`/perfil/${id}`}>Perfil</Link>
 				</div>
 			):null}
-			<div className="col s3">
-             	<Link  to ={routeCatalogo}>Catálogo</Link>
-			</div>
+			{usuario ? (
+				<div className="col s3">
+				<Link  to ={routeCatalogo}>Catálogo</Link>
+		   		</div>
+			): null}
 			</nav>
     )
 }
